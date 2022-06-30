@@ -231,7 +231,12 @@ justify-content: flex-start;
     }
     & a img {
         /* background: orange!important; */
+        width: 2.5rem;
         height: 2.5rem;
+    }
+    & a span {
+        text-align: center;
+        /* font-size: 16px; */
     }
 }
 `;function $b(){const[e,t]=B.exports.useState([]);return B.exports.useEffect(()=>{(async()=>{let{data:n}=await yb();t(n)})()},[]),b(Pb,{children:b("div",{className:"item",children:e.map(n=>G(ce,{to:"/",className:`item${n.id}`,children:[b("img",{src:n.img,alt:""}),b("span",{children:n.title})]},`item${n.id}`))})})}const zb=rt.div`
@@ -275,7 +280,8 @@ border-bottom: 1px solid #ccc;
         & a p {
             margin-top: 0.25rem;
             width: 10rem;
-            height: 1.5rem;
+            /* height: 1.5rem; */
+            font-size: 0.8rem;
             word-break: break-all;
             text-overflow: ellipsis;
             overflow: hidden;
@@ -349,6 +355,7 @@ justify-content: space-between;
      a span {
         margin-left: 0.3rem;
         margin-bottom: 0.5rem;
+        font-size: 0.8rem;
         /* overflow: hidden; */
         text-align: center;
     }
@@ -441,6 +448,7 @@ margin-top: 0.5rem;
         margin-left: 1rem;
     }
     & a img {
+        width: 2.5rem;
         height: 2.5rem;
     }
 }
@@ -564,7 +572,8 @@ margin-bottom: 2.5rem;
         & a p {
             margin-top: 0.25rem;
             width: 10rem;
-            height: 1.5rem;
+            /* height: 1.5rem; */
+            font-size: 0.8rem;
             word-break: break-all;
             text-overflow: ellipsis;
             overflow: hidden;
@@ -595,4 +604,4 @@ flex: 1;
 overflow-y: auto
 /* overflow-y属性指定如果它溢出了元素的内容区是否剪辑顶部/底部边缘内容。
 如果溢出框，则应该提供滚动机制。 */
-`;function Yb(){return G(Wb,{children:[b(Ob,{}),b(Bb,{}),b(Fb,{}),b(Hb,{}),b(Ub,{})]})}const Gb=B.exports.lazy(()=>Aa(()=>import("./index.f503ac61.js"),[])),Xb=B.exports.lazy(()=>Aa(()=>import("./index.2e306fbe.js"),[])),qb=B.exports.lazy(()=>Aa(()=>import("./index.ac1ebf0e.js"),[])),Qb=B.exports.lazy(()=>Aa(()=>import("./index.0caf45a5.js"),[])),Kb=()=>G(bv,{children:[b(Bt,{path:"/",element:b(vs,{})}),b(Bt,{path:"/lol",element:b(Yb,{})}),b(Bt,{path:"/cf",element:b(vs,{})}),b(Bt,{path:"/home",element:b(vs,{})}),b(Bt,{path:"/judou",element:b(qb,{})}),b(Bt,{path:"/find",element:b(Gb,{})}),b(Bt,{path:"/mine",element:b(Xb,{})}),b(Bt,{path:"/gamelist",element:b(Qb,{})})]});function Jb(){return b("div",{className:"App",style:{height:"100%"},children:G("div",{className:"game",children:[b(Mv,{}),b(B.exports.Suspense,{fallback:b("div",{children:"loading..."}),children:b(Kb,{})}),b(Nv,{})]})})}ws.createRoot(document.getElementById("root")).render(b(Ev,{children:b(Jb,{})}));export{ce as L,Zb as g,b as j,B as r,rt as s};
+`;function Yb(){return G(Wb,{children:[b(Ob,{}),b(Bb,{}),b(Fb,{}),b(Hb,{}),b(Ub,{})]})}const Gb=B.exports.lazy(()=>Aa(()=>import("./index.9b703c39.js"),[])),Xb=B.exports.lazy(()=>Aa(()=>import("./index.c6812f77.js"),[])),qb=B.exports.lazy(()=>Aa(()=>import("./index.2f01c89c.js"),[])),Qb=B.exports.lazy(()=>Aa(()=>import("./index.59d9c6ce.js"),[])),Kb=()=>G(bv,{children:[b(Bt,{path:"/",element:b(vs,{})}),b(Bt,{path:"/lol",element:b(Yb,{})}),b(Bt,{path:"/cf",element:b(vs,{})}),b(Bt,{path:"/home",element:b(vs,{})}),b(Bt,{path:"/judou",element:b(qb,{})}),b(Bt,{path:"/find",element:b(Gb,{})}),b(Bt,{path:"/mine",element:b(Xb,{})}),b(Bt,{path:"/gamelist",element:b(Qb,{})})]});function Jb(){return b("div",{className:"App",style:{height:"100%"},children:G("div",{className:"game",children:[b(Mv,{}),b(B.exports.Suspense,{fallback:b("div",{children:"loading..."}),children:b(Kb,{})}),b(Nv,{})]})})}ws.createRoot(document.getElementById("root")).render(b(Ev,{children:b(Jb,{})}));export{ce as L,Zb as g,b as j,B as r,rt as s};

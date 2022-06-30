@@ -1,4 +1,4 @@
-import{s as m,r as t,g as o,j as a,L as i}from"./index.1053e39a.js";const p=m.div`
+import{s as m,r as t,g as o,j as a,L as i}from"./index.19e72281.js";const p=m.div`
     .game_name {
         display: block;
         width: 100%;

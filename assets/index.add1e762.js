@@ -154,7 +154,7 @@ Error generating stack: `+o.message+`
         }
     }
 }
-`;function Nv(){const{pathname:e}=Ar();return b(Dv,{children:G("div",{className:"footer",children:[G(ce,{to:"/home",className:Mn({active:e=="/home"||e=="/"||e=="/cf"||e=="/lol"}),children:[b("i",{className:"iconfont icon-shouye"}),b("span",{children:"\u9996\u9875"})]}),G(ce,{to:"/judou",className:Mn({active:e=="/judou"}),children:[b("i",{className:"iconfont icon-dadou"}),b("span",{children:"\u805A\u8C46"})]}),G(ce,{to:"/find",className:Mn({active:e=="/find"}),children:[b("i",{className:"iconfont icon-faxian"}),b("span",{children:"\u53D1\u73B0"})]}),G(ce,{to:"/mine",className:Mn({active:e=="/mime"}),children:[b("i",{className:"iconfont icon-wode"}),b("span",{children:"\u6211\u7684"})]})]})})}const Iv="modulepreload",uc={},Ov="./",Aa=function(t,n){return!n||n.length===0?t():Promise.all(n.map(r=>{if(r=`${Ov}${r}`,r in uc)return;uc[r]=!0;const i=r.endsWith(".css"),o=i?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${r}"]${o}`))return;const a=document.createElement("link");if(a.rel=i?"stylesheet":Iv,i||(a.as="script",a.crossOrigin=""),a.href=r,document.head.appendChild(a),i)return new Promise((s,l)=>{a.addEventListener("load",s),a.addEventListener("error",()=>l(new Error(`Unable to preload CSS for ${r}`)))})})).then(()=>t())},Rv=rt.div`
+`;function Nv(){const{pathname:e}=Ar();return b(Dv,{children:G("div",{className:"footer",children:[G(ce,{to:"/home",className:Mn({active:e=="/home"||e=="/"||e=="/cf"||e=="/lol"}),children:[b("i",{className:"iconfont icon-shouye"}),b("span",{children:"\u9996\u9875"})]}),G(ce,{to:"/judou",className:Mn({active:e=="/judou"}),children:[b("i",{className:"iconfont icon-dadou"}),b("span",{children:"\u805A\u8C46"})]}),G(ce,{to:"/find",className:Mn({active:e=="/find"}),children:[b("i",{className:"iconfont icon-faxian"}),b("span",{children:"\u53D1\u73B0"})]}),G(ce,{to:"/mine",className:Mn({active:e=="/mine"}),children:[b("i",{className:"iconfont icon-wode"}),b("span",{children:"\u6211\u7684"})]})]})})}const Iv="modulepreload",uc={},Ov="./",Aa=function(t,n){return!n||n.length===0?t():Promise.all(n.map(r=>{if(r=`${Ov}${r}`,r in uc)return;uc[r]=!0;const i=r.endsWith(".css"),o=i?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${r}"]${o}`))return;const a=document.createElement("link");if(a.rel=i?"stylesheet":Iv,i||(a.as="script",a.crossOrigin=""),a.href=r,document.head.appendChild(a),i)return new Promise((s,l)=>{a.addEventListener("load",s),a.addEventListener("error",()=>l(new Error(`Unable to preload CSS for ${r}`)))})})).then(()=>t())},Rv=rt.div`
 /* height: 1.582rem; */
 /* padding-top: 2rem; */
 margin-top: 0.5rem;
@@ -235,6 +235,7 @@ justify-content: flex-start;
         height: 2.5rem;
     }
     & a span {
+        margin-left: 0.2rem;
         text-align: center;
         /* font-size: 16px; */
     }
@@ -451,6 +452,11 @@ margin-top: 0.5rem;
         width: 2.5rem;
         height: 2.5rem;
     }
+    & a span {
+        margin-left: 0.2rem;
+        text-align: center;
+        /* font-size: 16px; */
+    }
 }
 .swiper-scrollbar-drag {
     height: 100%;
@@ -604,4 +610,4 @@ flex: 1;
 overflow-y: auto
 /* overflow-y属性指定如果它溢出了元素的内容区是否剪辑顶部/底部边缘内容。
 如果溢出框，则应该提供滚动机制。 */
-`;function Yb(){return G(Wb,{children:[b(Ob,{}),b(Bb,{}),b(Fb,{}),b(Hb,{}),b(Ub,{})]})}const Gb=B.exports.lazy(()=>Aa(()=>import("./index.e3da091d.js"),[])),Xb=B.exports.lazy(()=>Aa(()=>import("./index.cb478694.js"),[])),qb=B.exports.lazy(()=>Aa(()=>import("./index.95ebd1e3.js"),[])),Qb=B.exports.lazy(()=>Aa(()=>import("./index.75723ac3.js"),[])),Kb=()=>G(bv,{children:[b(Bt,{path:"/",element:b(vs,{})}),b(Bt,{path:"/lol",element:b(Yb,{})}),b(Bt,{path:"/cf",element:b(vs,{})}),b(Bt,{path:"/home",element:b(vs,{})}),b(Bt,{path:"/judou",element:b(qb,{})}),b(Bt,{path:"/find",element:b(Gb,{})}),b(Bt,{path:"/mine",element:b(Xb,{})}),b(Bt,{path:"/gamelist",element:b(Qb,{})})]});function Jb(){return b("div",{className:"App",style:{height:"100%"},children:G("div",{className:"game",children:[b(Mv,{}),b(B.exports.Suspense,{fallback:b("div",{children:"loading..."}),children:b(Kb,{})}),b(Nv,{})]})})}ws.createRoot(document.getElementById("root")).render(b(Ev,{children:b(Jb,{})}));export{ce as L,Zb as g,b as j,B as r,rt as s};
+`;function Yb(){return G(Wb,{children:[b(Ob,{}),b(Bb,{}),b(Fb,{}),b(Hb,{}),b(Ub,{})]})}const Gb=B.exports.lazy(()=>Aa(()=>import("./index.41665a5d.js"),[])),Xb=B.exports.lazy(()=>Aa(()=>import("./index.cc8f2a2e.js"),[])),qb=B.exports.lazy(()=>Aa(()=>import("./index.ff8c6bcf.js"),[])),Qb=B.exports.lazy(()=>Aa(()=>import("./index.3f906788.js"),[])),Kb=()=>G(bv,{children:[b(Bt,{path:"/",element:b(vs,{})}),b(Bt,{path:"/lol",element:b(Yb,{})}),b(Bt,{path:"/cf",element:b(vs,{})}),b(Bt,{path:"/home",element:b(vs,{})}),b(Bt,{path:"/judou",element:b(qb,{})}),b(Bt,{path:"/find",element:b(Gb,{})}),b(Bt,{path:"/mine",element:b(Xb,{})}),b(Bt,{path:"/gamelist",element:b(Qb,{})})]});function Jb(){return b("div",{className:"App",style:{height:"100%"},children:G("div",{className:"game",children:[b(Mv,{}),b(B.exports.Suspense,{fallback:b("div",{children:"loading..."}),children:b(Kb,{})}),b(Nv,{})]})})}ws.createRoot(document.getElementById("root")).render(b(Ev,{children:b(Jb,{})}));export{ce as L,Zb as g,b as j,B as r,rt as s};

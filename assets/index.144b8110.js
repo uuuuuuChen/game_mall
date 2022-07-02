@@ -235,7 +235,7 @@ justify-content: flex-start;
         height: 2.5rem;
     }
     & a span {
-        margin-left: 0.2rem;
+        margin-left: 0.1rem;
         text-align: center;
         /* font-size: 16px; */
     }
@@ -453,7 +453,7 @@ margin-top: 0.5rem;
         height: 2.5rem;
     }
     & a span {
-        margin-left: 0.2rem;
+        margin-left: 0.1rem;
         text-align: center;
         /* font-size: 16px; */
     }
@@ -610,4 +610,4 @@ flex: 1;
 overflow-y: auto
 /* overflow-y属性指定如果它溢出了元素的内容区是否剪辑顶部/底部边缘内容。
 如果溢出框，则应该提供滚动机制。 */
-`;function Yb(){return G(Wb,{children:[b(Ob,{}),b(Bb,{}),b(Fb,{}),b(Hb,{}),b(Ub,{})]})}const Gb=B.exports.lazy(()=>Aa(()=>import("./index.41665a5d.js"),[])),Xb=B.exports.lazy(()=>Aa(()=>import("./index.cc8f2a2e.js"),[])),qb=B.exports.lazy(()=>Aa(()=>import("./index.ff8c6bcf.js"),[])),Qb=B.exports.lazy(()=>Aa(()=>import("./index.3f906788.js"),[])),Kb=()=>G(bv,{children:[b(Bt,{path:"/",element:b(vs,{})}),b(Bt,{path:"/lol",element:b(Yb,{})}),b(Bt,{path:"/cf",element:b(vs,{})}),b(Bt,{path:"/home",element:b(vs,{})}),b(Bt,{path:"/judou",element:b(qb,{})}),b(Bt,{path:"/find",element:b(Gb,{})}),b(Bt,{path:"/mine",element:b(Xb,{})}),b(Bt,{path:"/gamelist",element:b(Qb,{})})]});function Jb(){return b("div",{className:"App",style:{height:"100%"},children:G("div",{className:"game",children:[b(Mv,{}),b(B.exports.Suspense,{fallback:b("div",{children:"loading..."}),children:b(Kb,{})}),b(Nv,{})]})})}ws.createRoot(document.getElementById("root")).render(b(Ev,{children:b(Jb,{})}));export{ce as L,Zb as g,b as j,B as r,rt as s};
+`;function Yb(){return G(Wb,{children:[b(Ob,{}),b(Bb,{}),b(Fb,{}),b(Hb,{}),b(Ub,{})]})}const Gb=B.exports.lazy(()=>Aa(()=>import("./index.b4177edf.js"),[])),Xb=B.exports.lazy(()=>Aa(()=>import("./index.3c9c7d00.js"),[])),qb=B.exports.lazy(()=>Aa(()=>import("./index.4d1d6e42.js"),[])),Qb=B.exports.lazy(()=>Aa(()=>import("./index.67adf921.js"),[])),Kb=()=>G(bv,{children:[b(Bt,{path:"/",element:b(vs,{})}),b(Bt,{path:"/lol",element:b(Yb,{})}),b(Bt,{path:"/cf",element:b(vs,{})}),b(Bt,{path:"/home",element:b(vs,{})}),b(Bt,{path:"/judou",element:b(qb,{})}),b(Bt,{path:"/find",element:b(Gb,{})}),b(Bt,{path:"/mine",element:b(Xb,{})}),b(Bt,{path:"/gamelist",element:b(Qb,{})})]});function Jb(){return b("div",{className:"App",style:{height:"100%"},children:G("div",{className:"game",children:[b(Mv,{}),b(B.exports.Suspense,{fallback:b("div",{children:"loading..."}),children:b(Kb,{})}),b(Nv,{})]})})}ws.createRoot(document.getElementById("root")).render(b(Ev,{children:b(Jb,{})}));export{ce as L,Zb as g,b as j,B as r,rt as s};

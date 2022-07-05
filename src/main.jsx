@@ -7,6 +7,7 @@ import './assets/style/reset.css'
 import './assets/font/iconfont.css'
 import 'swiper/dist/css/swiper.min.css'
 import { Provider } from 'react-redux'
+import 'weui'
 import store from './store'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

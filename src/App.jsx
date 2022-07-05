@@ -11,9 +11,7 @@ function App() {
       <div className="App" style={{height:'100%'}}>
         <div className='game'>
           <Header/>  
-          <Suspense fallback={
-          <SpinLoading color='primary'>loading...</SpinLoading>}
-          >
+          <Suspense fallback={<div></div>}>
               <RoutesConfig>
               </RoutesConfig>
           </Suspense>

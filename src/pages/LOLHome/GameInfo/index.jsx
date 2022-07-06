@@ -1,17 +1,17 @@
 import React, {useEffect,useState} from 'react'
 import { Wrapper } from './style'
-import { getLolInfo } from '@/api/request'
+// import { getLolInfoRequest } from '@/api/request'
 import { Link } from 'react-router-dom'
 
-export default function GameInfo() {
-    const [lolinfo,setgLolinfo] = useState([])
-    useEffect(()=> {
-        (async() => {
-            let { data } = await getLolInfo()
-            // console.log(data)
-            setgLolinfo(data)
-        })()
-    }, [])
+export default function GameInfo({lolinfo}) {
+    // const [lolinfo,setgLolinfo] = useState([])
+    // useEffect(()=> {
+    //     (async() => {
+    //         let { data } = await getLolInfoRequest()
+    //         // console.log(data)
+    //         setgLolinfo(data)
+    //     })()
+    // }, [])
     return (
         <Wrapper>
             <div className='title'>

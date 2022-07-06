@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getGameLists } from '@/api/request';
+import { getGameListsRequest } from '@/api/request';
 import { GameWrapper } from './style'
 
 // import { } from './style'
@@ -10,7 +10,7 @@ const GameList = () => {
 
     useEffect(() => {
         (async () => {
-            let { data } = await getGameLists();
+            let { data } = await getGameListsRequest();
             // console.log(data);
             setGames(data);
         })()

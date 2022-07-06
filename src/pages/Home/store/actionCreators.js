@@ -1,8 +1,8 @@
 import { 
-    getActivitiesInfo, 
-    getActivities,
-    getGamesInfo,
-    getSalesInfo
+    getActivitiesInfoRequest, 
+    getActivitiesRequest,
+    getGamesInfoRequest,
+    getSalesInfoRequest
 } 
 from '@/api/request'
 import * as actionTypes from './constant'
@@ -14,7 +14,7 @@ export const changeActivityInfo = (data) => ({
 
 export const getActivityInfo = () => {
     return (dispatch) => {
-        getActivitiesInfo()
+        getActivitiesInfoRequest()
             .then(data => {
                 const action = changeActivityInfo(data.data)
                 dispatch(action)
@@ -30,7 +30,7 @@ export const changeActivityList = (data) => ({
 
 export const getActivityList = () => {
     return (dispatch) => {
-        getActivities()
+        getActivitiesRequest()
             .then(data => {
                 // console.log(data.data)
                 const action = changeActivityList(data.data)
@@ -47,7 +47,7 @@ export const changeGameInfo = (data) => ({
 
 export const getGameInfo = () => {
     return (dispatch) => {
-        getGamesInfo()
+        getGamesInfoRequest()
             .then(data => {
                 dispatch(changeGameInfo(data.data))
             })
@@ -62,9 +62,15 @@ export const changeSaleInfo = (data) => ({
 
 export const getSaleInfo = () => {
     return (dispatch) => {
-        getSalesInfo()
+        getSalesInfoRequest()
             .then(data => {
                 dispatch(changeSaleInfo(data.data))
+                dispatch(changeLoading(false))
             })
     }
 }
+
+export const changeLoading = (data) => ({
+    type: actionTypes.CHANGE_LOADING,
+    data
+})

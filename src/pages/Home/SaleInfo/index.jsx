@@ -1,6 +1,6 @@
 import React, {useEffect,useState} from 'react'
 import { Wrapper } from './style'
-import { getSalesInfo } from '@/api/request'
+// import { getSalesInfoRequest } from '@/api/request'
 import { Link } from 'react-router-dom'
 import Swiper from 'swiper'
 
@@ -8,7 +8,7 @@ export default function Activities({saleinfo}) {
     // const [saleinfo,setSaleInfo] = useState([])
     // useEffect(()=> {
     //     (async() => {
-    //         let { data } = await getSalesInfo()
+    //         let { data } = await getSalesInfoRequest()
     //         // console.log(data)
     //         setSaleInfo(data)
     //     })()

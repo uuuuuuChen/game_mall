@@ -10,7 +10,7 @@ export const FooterWrapper = styled.div`
     z-index: 9999;
     background: #fff;
     .footer {
-    margin-top: 0.5rem;
+    /* margin-top: 0.5rem; */
     display: flex;
     flex: 1;
     text-align: center;

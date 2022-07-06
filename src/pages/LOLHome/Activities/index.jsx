@@ -1,17 +1,17 @@
 import React, {useEffect,useState} from 'react'
 import { Wrapper } from './style'
-import { getLolSale } from '@/api/request'
+// import { getLolSaleRequest } from '@/api/request'
 import { Link } from 'react-router-dom'
 
-export default function Activities() {
-    const [lolsale,setLolsale] = useState([])
-    useEffect(()=> {
-        (async() => {
-            let { data } = await getLolSale()
-            // console.log(data)
-            setLolsale(data)
-        })()
-    }, [])
+export default function Activities({lolsaleinfo}) {
+    // const [lolsale,setLolsale] = useState([])
+    // useEffect(()=> {
+    //     (async() => {
+    //         let { data } = await getLolSaleRequest()
+    //         // console.log(data)
+    //         setLolsale(data)
+    //     })()
+    // }, [])
     return (
         <Wrapper>
             <div className='title'>
@@ -22,7 +22,7 @@ export default function Activities() {
             </div>
             <div className='lol-sale'>
                 {
-                    lolsale.map(item => {
+                    lolsaleinfo.map(item => {
                         return (
                             <Link 
                                 to='/lol'

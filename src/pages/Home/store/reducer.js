@@ -5,6 +5,7 @@ const defaultState = {
     activitylist: [],
     gameinfo: [],
     saleinfo: [],
+    loading: true
 }
 
 export default (state = defaultState, action) => {
@@ -28,6 +29,11 @@ export default (state = defaultState, action) => {
             return {
                 ...state,
                 saleinfo: action.data
+            }
+        case actionTypes.CHANGE_LOADING:
+            return {
+                ...state,
+                loading: action.data
             }
         default: 
             return state

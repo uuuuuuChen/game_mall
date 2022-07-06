@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { Wrapper } from './style'
-import { getActivityLolInfo } from '@/api/request'
+// import { getActivityLolInfos } from '@/api/request'
 import { Link } from 'react-router-dom'
 import Swiper from 'swiper'
 
-export default function ActiveitiesInfo() {
-    const [lolactivityinfo, setLolactivityinfo] = useState([])
-    useEffect(() => {
-        (async () => {
-            let { data } = await getActivityLolInfo()
-            setLolactivityinfo(data)
-            // console.log(data)
-        })()
-    }, [])
+export default function ActiveitiesInfo({activitylolinfo}) {
+    // const [lolactivityinfo, setLolactivityinfo] = useState([])
+    // useEffect(() => {
+    //     (async () => {
+    //         let { data } = await getActivityLolInfos()
+    //         setLolactivityinfo(data)
+    //         // console.log(data)
+    //     })()
+    // }, [])
     let swiper = null;
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export default function ActiveitiesInfo() {
     }, [])
 
     const renderBtnBannersPages1 = () => {
-        let items = lolactivityinfo.slice(0, 5)
+        let items = activitylolinfo.slice(0, 5)
         return items.map(item => {
             return (
                 
@@ -46,7 +46,7 @@ export default function ActiveitiesInfo() {
         })
     }
     const renderBtnBannersPages2 = () => {
-        let items = lolactivityinfo.slice(5)
+        let items = activitylolinfo.slice(5)
         return items.map(item => {
             return (
                     <Link

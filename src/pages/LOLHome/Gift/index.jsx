@@ -1,18 +1,18 @@
 import React, {useEffect,useState} from 'react'
 import { Wrapper } from './style'
 // import { RightOutline } from 'antd-mobile-icons'
-import { getLolGift } from '@/api/request'
+// import { getLolGiftRequest } from '@/api/request'
 import { Link } from 'react-router-dom'
 
-export default function GameInfo() {
-    const [giftinfo,setgGiftinfo] = useState([])
-    useEffect(()=> {
-        (async() => {
-            let { data } = await getLolGift()
-            // console.log(data)
-            setgGiftinfo(data)
-        })()
-    }, [])
+export default function GameInfo({lolgift}) {
+    // const [giftinfo,setgGiftinfo] = useState([])
+    // useEffect(()=> {
+    //     (async() => {
+    //         let { data } = await getLolGiftRequest()
+    //         // console.log(data)
+    //         setgGiftinfo(data)
+    //     })()
+    // }, [])
     return (
         <Wrapper>
             <div className='title'>
@@ -24,7 +24,7 @@ export default function GameInfo() {
             </div>
             <div className='gift-info'>
             {
-                    giftinfo.map(item => {
+                    lolgift.map(item => {
                         return (
                             <Link 
                                 to='/lol'

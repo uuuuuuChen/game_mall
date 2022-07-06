@@ -1,20 +1,20 @@
 import { axiosInstance  } from "./config";
 
-export const getActivitiesInfo = () => axiosInstance.get('/activiesinfo')
+export const getActivitiesInfoRequest = () => axiosInstance.get('/activiesinfo')
 
-export const getActivities = () => axiosInstance.get('/activies')
+export const getActivitiesRequest = () => axiosInstance.get('/activies')
 
-export const getGamesInfo = () => axiosInstance.get('/gameinfo')
+export const getGamesInfoRequest = () => axiosInstance.get('/gameinfo')
 
-export const getGameLists = () => axiosInstance.get('/gamelists')
+export const getGameListsRequest = () => axiosInstance.get('/gamelists')
 
-export const getSalesInfo = () => axiosInstance.get('/saleinfo')
+export const getSalesInfoRequest = () => axiosInstance.get('/saleinfo')
 
-export const getActivityLolInfo = () => axiosInstance.get('/lolactivitiesinfo')
+export const getActivityLolInfoRequest = () => axiosInstance.get('/lolactivitiesinfo')
 
-export const getLolSale = () => axiosInstance.get('/lolactivities')
+export const getLolSaleRequest = () => axiosInstance.get('/lolactivities')
 
-export const getLolGift = () => axiosInstance.get('/gift')
+export const getLolGiftRequest = () => axiosInstance.get('/gift')
 
-export const getLolInfo = () => axiosInstance.get('/lolinfo')
+export const getLolInfoRequest = () => axiosInstance.get('/lolinfo')
 

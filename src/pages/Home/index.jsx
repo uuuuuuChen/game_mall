@@ -13,12 +13,12 @@ const { Toast } = WeUI
 
 
 function Home(props) {
-    const [loading, setLoading] = useState(true)
     let { 
         activityinfo,
         activitylist,
         gameinfo, 
         saleinfo,
+        loading,
         getActivityInfoDataDispatch,
         getActivityListDataDispatch,
         getGameInfoDataDispatch,
@@ -31,7 +31,6 @@ function Home(props) {
         getActivityListDataDispatch()
         getGameInfoDataDispatch()
         getSaleInfoDataDispatch()
-        setLoading(false)
     }, [])
     return (
         <Wrapper>
@@ -50,6 +49,7 @@ const mapStateToProps = (state) => {
         activityinfo: state.home.activityinfo,
         gameinfo: state.home.gameinfo,
         saleinfo: state.home.saleinfo,
+        loading: state.home.loading
     }
 }
 const mapDispatchToProps = (dispatch) => {

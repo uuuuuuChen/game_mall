@@ -1,6 +1,6 @@
 import React, {useEffect,useState} from 'react'
 import { Wrapper } from './style'
-import { getGamesInfo } from '@/api/request'
+// import { getGamesInfoRequest } from '@/api/request'
 import { Link } from 'react-router-dom'
 
 export default function GameInfo({gameinfo}) {

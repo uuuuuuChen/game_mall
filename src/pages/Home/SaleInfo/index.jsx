@@ -1,10 +1,10 @@
-import React, {useEffect,useState} from 'react'
+import React, {useEffect, useState, memo} from 'react'
 import { Wrapper } from './style'
 // import { getSalesInfoRequest } from '@/api/request'
 import { Link } from 'react-router-dom'
 import Swiper from 'swiper'
 
-export default function Activities({saleinfo}) {
+function SaleInfo({saleinfo}) {
     // const [saleinfo,setSaleInfo] = useState([])
     // useEffect(()=> {
     //     (async() => {
@@ -66,3 +66,4 @@ export default function Activities({saleinfo}) {
         </Wrapper>
     )
 }
+export default memo(SaleInfo)

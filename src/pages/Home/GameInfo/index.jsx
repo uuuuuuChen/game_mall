@@ -1,9 +1,9 @@
-import React, {useEffect,useState} from 'react'
+import React, {useEffect, useState, memo} from 'react'
 import { Wrapper } from './style'
 // import { getGamesInfoRequest } from '@/api/request'
 import { Link } from 'react-router-dom'
 
-export default function GameInfo({gameinfo}) {
+function GameInfo({gameinfo}) {
     // const [gameinfo,setgGameinfo] = useState([])
     // useEffect(()=> {
     //     (async() => {
@@ -47,3 +47,4 @@ export default function GameInfo({gameinfo}) {
         </Wrapper>
     )
 }
+export default memo(GameInfo)

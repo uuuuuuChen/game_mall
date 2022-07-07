@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,memo } from 'react'
 import { Wrapper } from './style'
 import { Link } from 'react-router-dom'
 import Swiper from 'swiper'
 
-export default function Banners() {
+function Banners() {
     useEffect(() => {
         new Swiper('.btn-banners', {
             loop: true,
@@ -51,3 +51,5 @@ export default function Banners() {
         </Wrapper>
     )
 }
+
+export default memo(Banners)

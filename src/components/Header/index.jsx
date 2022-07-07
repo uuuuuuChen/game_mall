@@ -1,4 +1,4 @@
-import React,{ useState,useEffect } from 'react'
+import React,{ useState,useEffect, memo } from 'react'
 import { HeaderWrapper } from './style'
 import { Link, NavLink,useLocation } from 'react-router-dom'
 import GameList from '@/pages/GameList'
@@ -6,7 +6,7 @@ import { Popup, Space } from 'antd-mobile'
 // import Swiper from 'swiper'
 import classnames from 'classnames'
 
-export default function Header() {
+function Header() {
     // const [title, setTitle] = useState('精选')
     const [visible, setVisible] = useState(false)
     const { pathname } = useLocation()
@@ -62,3 +62,5 @@ export default function Header() {
         </HeaderWrapper>
     )
 }
+
+export default memo(Header)

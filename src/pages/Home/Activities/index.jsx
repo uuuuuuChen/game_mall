@@ -1,9 +1,9 @@
-import React, {useEffect,useState} from 'react'
+import React, {useEffect, useState, memo} from 'react'
 import { Wrapper } from './style'
 // import { getActivities } from '@/api/request'
 import { Link } from 'react-router-dom'
 
-export default function Activities({activitylist}) {
+function Activities({activitylist}) {
     // const [activities,setActivities] = useState([])
     // useEffect(()=> {
     //     (async() => {
@@ -42,3 +42,4 @@ export default function Activities({activitylist}) {
         </Wrapper>
     )
 }
+export default memo(Activities)

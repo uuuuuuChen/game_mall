@@ -1,9 +1,10 @@
 import React from 'react'
+import { memo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { FooterWrapper } from './style'
 import classnames from 'classnames'
 
-export default function Footer() {
+function Footer() {
   const { pathname } = useLocation()
   // console.log(pathname)
   return (
@@ -29,3 +30,5 @@ export default function Footer() {
     </FooterWrapper>
   )
 }
+
+export default memo(Footer)

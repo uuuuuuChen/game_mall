@@ -7,7 +7,7 @@ export const FooterWrapper = styled.div`
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 9999;
+    z-index: 999;
     background: #fff;
     .footer {
     /* margin-top: 0.5rem; */

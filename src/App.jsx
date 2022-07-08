@@ -3,8 +3,6 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import RoutesConfig from './routes'
 import './App.css'
-import { Space, SpinLoading } from 'antd-mobile'
-
 
 function App() {
     return (

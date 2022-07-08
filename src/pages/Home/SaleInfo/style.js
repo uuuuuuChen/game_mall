@@ -29,7 +29,7 @@ justify-content: space-between;
     justify-content: space-around;
     & .swiper-slide {
         width: 12rem!important;
-        height: 5rem;
+        /* height: 5rem; */
         border: 1px solid #ccc;
         margin-right: 0.5rem;
   

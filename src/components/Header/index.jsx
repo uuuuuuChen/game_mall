@@ -16,6 +16,9 @@ function Header() {
     //     { id: 2, desc: '英雄联盟', path: '/lol'},
     //     { id: 3, desc: 'CF穿越火线', path: '/cf'},
     // ]
+    const onMaskClick= () => {
+        setVisible(false)
+    }
     return (
         <HeaderWrapper>
                 <div className="nav-box">
@@ -47,14 +50,13 @@ function Header() {
                         <i  className='iconfont icon-jiahao icon-right' ></i>
                         <Space direction='vertical'>
                         <Popup
+                            // style={{'--z-index':'9999'}}
                             visible={visible}
-                            onMaskClick={() => {
-                                setVisible(false)
-                            }}
-                            position='right'
-                            bodyStyle={{ minWidth: '60vw' }}
+                            position='bottom'
+                            onMaskClick={onMaskClick}
+                            bodyStyle={{ minHeight:'100%' }}
                             >
-                            <GameList/>
+                            <GameList onMaskClick={onMaskClick}/>
                         </Popup>
                         </Space>
                     </Link>

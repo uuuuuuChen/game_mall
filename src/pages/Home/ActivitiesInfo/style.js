@@ -7,6 +7,7 @@ flex: 1;
 flex-direction: row;
 justify-content: flex-start;
 .item {
+    /* height: 100%; */
     width: 18.75rem;
     display: flex;
     margin-left: 1rem;

@@ -1,16 +1,11 @@
 import styled from "styled-components";
 
 export const GameWrapper = styled.div`
-    .game_name {
-        display: block;
-        width: 100%;
-        height: 2.5rem;
-        border-bottom: 1px solid rgb(206, 204, 204);
-        font-size: 0.9rem;
-        line-height: 2.5rem;
-        text-indent: 0.5rem;
-    }
+    height: 100vh;
+    overflow: scroll;
+    overflow-y: auto;
     h2 {
+
         display: inline-flex;
         margin-left: 0.5rem;
         margin-right: 0.2rem;
@@ -26,15 +21,43 @@ export const GameWrapper = styled.div`
         justify-content: space-between;
         .span1 {
             margin-left: -4rem;
+            font-size: 0.5rem;
         }
         .span2 {
             width: 2.5rem;
             text-align: center;
             /* padding: 0.5rem; */
-            border: 1px solid #ccc;
+            border: 1px solid rgb(245,245,245);
             border-radius: 0.5rem;
             margin-right: 0.5rem;
-            /* background: orange; */
+            background: rgb(245,245,245);
+            
+        }
+    }
+    .search {
+        margin-bottom: 0.5rem;
+        .search1 {
+        margin-left: 0.5rem;
+        display: inline-block;
+        width: 85%;
+        }
+    }
+    .list {
+        margin-left: 0.3rem;
+        /* width: 100%; */
+        div {
+            margin: 0 0.5rem;
+            margin-bottom: 0.4rem;
+            display: inline-block;
+            text-align: center;
+            /* width: 4.5rem; */
+            height: 1.5rem;
+            margin-right: 0.5rem;
+            font-size: 0.4rem!important;
+            /* line-height: 0.4rem; */
+            background: rgb(245,245,245);
+            border: 0.35rem solid rgb(245,245,245);
+            border-radius: 0.5rem;
         }
     }
 `

@@ -6,27 +6,33 @@ export const HeaderWrapper = styled.div`
         line-height: 1.75rem;
     .nav-box {
         display: flex;
-        flex: 1;
-        justify-content: space-around;
         border-bottom: 1px solid #ccc;
         background: #fff;
         & i {
-        width: 0.75rem;
-        font-size: 2em;
+        margin-left: 0.5rem;
+        width: 0.5rem;
+        font-size: 1.5rem;
         }
+        & div {
 
+        }
         & .icon-right {
+        margin-right: 0.5rem;
+        width: 0.5rem;
         font-size: 1.5rem;
         }
 
         a {
+        /* margin-left: 0.3rem; */
+        flex: 1;
+        justify-content: space-around;
         position: relative;
         text-align: center;
         font-size: 0.75rem;
         color: #666;
 
         &.active {
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 700;
             color:#333;
         }

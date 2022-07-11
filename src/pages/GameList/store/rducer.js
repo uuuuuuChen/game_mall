@@ -34,7 +34,21 @@ export default (state = defaultState,action) => {
                     games,
                     selectedgamelist: newSelectedGameList
                 }
-        case actionTypes.CHANGE_LOADING:
+            case actionTypes.DETELE_LIST:
+                // console.log(action.data)
+                let deleteGame = state.selectedgamelist.find(item =>  item.cid == action.data)
+                let selectedgamelist = state.selectedgamelist.filter(item => item.cid != action.data)
+                let newGameList = [
+                    ...state.games,
+                    deleteGame
+                ]
+                // console.log(deleteGame, selectedgamelist,newGameList)
+            return {
+                ...state,
+                games: newGameList,
+                selectedgamelist
+            }
+        case actionTypes.CHANGE_GAMELISTLOADING:
             return {
                 ...state,
                 loading: action.data

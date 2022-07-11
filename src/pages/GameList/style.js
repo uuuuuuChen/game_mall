@@ -30,7 +30,13 @@ export const GameWrapper = styled.div`
             border: 1px solid rgb(245,245,245);
             border-radius: 0.5rem;
             margin-right: 0.5rem;
-            background: rgb(245,245,245);
+            /* background: rgb(245,245,245); */
+            &.active {
+                border-width:thin;
+                color: #65A5FF;
+                border: 1px solid #65A5FF;
+                border-radius: 0.5rem;
+            }
             
         }
     }
@@ -54,10 +60,16 @@ export const GameWrapper = styled.div`
             height: 1.5rem;
             margin-right: 0.5rem;
             font-size: 0.4rem!important;
-            /* line-height: 0.4rem; */
+            line-height: 1rem;
             background: rgb(245,245,245);
             border: 0.25rem solid rgb(245,245,245);
             border-radius: 0.5rem;
+            position: relative;
+            & i {
+                position: absolute;
+                top: -0.3rem;
+                right: -0.3rem;
+            }
         }
     }
 `

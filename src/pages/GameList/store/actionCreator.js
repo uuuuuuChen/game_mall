@@ -16,8 +16,12 @@ const addList = (data) => ({
     type: actionTypes.ADD_LIST,
     data
 })
+const deleteList = (data) => ({
+    type: actionTypes.DETELE_LIST,
+    data
+})
 const changeLoading = (data) => ({
-    type: actionTypes.CHANGE_LOADING,
+    type: actionTypes.CHANGE_GAMELISTLOADING,
     data
 })
 export const getSelectedGameList = () => {
@@ -34,7 +38,7 @@ export const getGameList = () => {
         getGameListsRequest()
             .then(data => {
                 dispatch(changeGameList(data.data))
-                // dispatch(changeLoading(false))
+                dispatch(changeLoading(false))
             })
     }
 }
@@ -42,6 +46,13 @@ export const getGameList = () => {
 export const AddListData = (data) => {
     return (dispatch) => {
        dispatch(addList(data))
+    //    dispatch(changeSelectedGameList(data.data))
+    }
+}
+
+export const DeleteListData = (data) => {
+    return (dispatch) => {
+       dispatch(deleteList(data))
     //    dispatch(changeSelectedGameList(data.data))
     }
 }

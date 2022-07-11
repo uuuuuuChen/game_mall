@@ -29,7 +29,7 @@ export default (state = defaultState, action) => {
                 ...state,
                 lolinfo: action.data
             }
-        case actionTypes.CAHNGE_LOADING:
+        case actionTypes.CAHNGE_LOLLOADING:
             return {
                 ...state,
                 loading: action.data

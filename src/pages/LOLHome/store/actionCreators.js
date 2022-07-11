@@ -67,6 +67,6 @@ export const getLolInfo = () => {
 }
 
 export const changeLoading = (data) => ({
-    type: actionTypes.CAHNGE_LOADING,
+    type: actionTypes.CAHNGE_LOLLOADING,
     data
 })

@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 import { GameWrapper } from './style'
 import { SearchBar } from 'antd-mobile'
 import Main from './Main'
+import classnames from 'classnames'
 import { connect } from 'react-redux';
 import { 
     getGameList,
     getSelectedGameList,
-    AddListData
+    AddListData,
+    DeleteListData
 } from './store/actionCreator'
 import WeUI from 'react-weui'
 
@@ -18,30 +20,37 @@ const { Toast } = WeUI
 // import { } from './style'
 
 const GameList = (props) => {
-    const { onMaskClick, selectedgamelist, games, loading } = props
+    const [activekey, setActivekey] = useState(false)
+    const { 
+        onMaskClick, 
+        selectedgamelist, 
+        games, 
+        loading 
+    } = props
     const { 
         getGameListDispatch, 
         getSelectedGameListDispatch,
-        AddList
+        AddList,
+        DeleteList
     } = props
-    // const [games, setGames] = useState([])
 
     useEffect(() => {
         getGameListDispatch()
         getSelectedGameListDispatch()
     }, [])
-    // useEffect(() => {
-    //     getSelectedGameListDispatch()
-    // }, [selectedgamelist])
-    // console.log(selectedgamelist,games, '------------------------')
-
+    
     const renderGames = () => {
         // console.log('selectedgameList');
         return selectedgamelist.map((item) => {
             return (
-                <li key={item.cid} >
-                    {/* onClick={() => DeleteList(item.cid)} */}
+                <li key={item.cid} className={classnames({active: activekey == true})}
+                   onClick={ activekey ? () => DeleteList(item.cid) : () => {}}
+                >
                     {item.desc}
+                    <i className='fa fa-minus-circle icon' 
+                     style={activekey ? {} : {display:'none'}}
+                    >
+                    </i>
                 </li>
             )
         })
@@ -66,10 +75,16 @@ const GameList = (props) => {
             <div className='header'>
                 <h2>我的游戏</h2>
                 <span className='span1'>按住拖动可调整顺序</span>
-                <span className='span2' >编辑</span>
-
+                <span onClick={() => setActivekey(!activekey)} 
+                className={classnames({span2:true}, {active: activekey === true})}
+                >
+                    {
+                        activekey ? '完成' : '编辑'
+                    }
+                </span>
             </div>
             <div className="list">
+                <li>推荐</li>
                 {renderGames()}
             </div>
             <Main games={games} AddList={AddList}></Main>
@@ -92,8 +107,11 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(getSelectedGameList())
         },
         AddList(data) {
-            console.log(data)
+            // console.log(data)
             dispatch(AddListData(data))
+        },
+        DeleteList(data) {
+            dispatch(DeleteListData(data))
         }
     }
 }

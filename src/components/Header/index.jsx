@@ -41,7 +41,7 @@ function Header() {
                     >
                         CF穿越火线
                     </Link>
-                    <Link 
+                    <div 
                         to='/'
                         onClick={() => {
                             setVisible(true)
@@ -59,7 +59,7 @@ function Header() {
                             <GameList onMaskClick={onMaskClick}/>
                         </Popup>
                         </Space>
-                    </Link>
+                    </div>
                 </div>    
         </HeaderWrapper>
     )

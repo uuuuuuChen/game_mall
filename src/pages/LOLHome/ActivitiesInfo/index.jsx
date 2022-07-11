@@ -64,22 +64,6 @@ export default function ActiveitiesInfo({activitylolinfo}) {
         <Wrapper>
             <div className='item swiper-container'>
                 <div className="swiper-wrapper">
-                    {/* {
-                        lolactivityinfo.map(item => {
-                            return (
-                                <div className="swiper-slide" key={Math.random() * 1000 + item.id}>
-                                    <Link
-                                        to='/lol'
-                                        key={`item${item.id}`}
-                                        className={`item${item.id}`}
-                                    >
-                                        <img src={item.img} alt="" />
-                                        <span>{item.title}</span>
-                                    </Link>
-                                </div>
-                            )
-                        })
-                    } */}
                     <div className="swiper-slide">
                         {
                             renderBtnBannersPages1()  

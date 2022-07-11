@@ -5,7 +5,11 @@ import { GameWrapper } from './style'
 import { SearchBar } from 'antd-mobile'
 import Main from './Main'
 import { connect } from 'react-redux';
-import { getGameList } from './store/actionCreator'
+import { 
+    getGameList,
+    getSelectedGameList,
+    AddListData
+} from './store/actionCreator'
 import WeUI from 'react-weui'
 
 const { Toast } = WeUI
@@ -14,24 +18,31 @@ const { Toast } = WeUI
 // import { } from './style'
 
 const GameList = (props) => {
-    const { onMaskClick, getGameListDispatch, games, loading } = props
+    const { onMaskClick, selectedgamelist, games, loading } = props
+    const { 
+        getGameListDispatch, 
+        getSelectedGameListDispatch,
+        AddList
+    } = props
     // const [games, setGames] = useState([])
 
     useEffect(() => {
-        // (async () => {
-        //     let { data } = await getGameListsRequest();
-        //     // console.log(data);
-        //     setGames(data);
-        // })()
         getGameListDispatch()
+        getSelectedGameListDispatch()
     }, [])
-    // console.log(games)
+    // useEffect(() => {
+    //     getSelectedGameListDispatch()
+    // }, [selectedgamelist])
+    // console.log(selectedgamelist,games, '------------------------')
+
     const renderGames = () => {
-        return games.slice(0,4).map((item) => {
+        // console.log('selectedgameList');
+        return selectedgamelist.map((item) => {
             return (
-                <div key={item.cid}>
+                <li key={item.cid} >
+                    {/* onClick={() => DeleteList(item.cid)} */}
                     {item.desc}
-                </div>
+                </li>
             )
         })
     }
@@ -55,19 +66,20 @@ const GameList = (props) => {
             <div className='header'>
                 <h2>我的游戏</h2>
                 <span className='span1'>按住拖动可调整顺序</span>
-                <span className='span2'>编辑</span>
+                <span className='span2' >编辑</span>
 
             </div>
             <div className="list">
                 {renderGames()}
             </div>
-            <Main games={games}></Main>
+            <Main games={games} AddList={AddList}></Main>
         </GameWrapper>
     )
 }
 const mapStateToProps = (state) => {
     return {
         games:state.gamelist.games,
+        selectedgamelist: state.gamelist.selectedgamelist,
         loading:state.gamelist.loading
     }
 }
@@ -75,6 +87,13 @@ const mapDispatchToProps = (dispatch) => {
     return {
         getGameListDispatch() {
             dispatch(getGameList())
+        },
+        getSelectedGameListDispatch() {
+            dispatch(getSelectedGameList())
+        },
+        AddList(data) {
+            console.log(data)
+            dispatch(AddListData(data))
         }
     }
 }

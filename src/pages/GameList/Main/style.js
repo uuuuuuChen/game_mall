@@ -15,13 +15,12 @@ export const Wrapper = styled.div`
   
   .main {
     flex: auto;
-    /* height: 100%;
-    overflow-y: auto; */
   }
   
   
   .content {
     display: none;
+    /* height: 100%; */
     /* justify-content: center; */
     margin-left: 0.5rem;
     flex-wrap: wrap;
@@ -32,12 +31,12 @@ export const Wrapper = styled.div`
       display: flex;
     }
     & .game-list {
+        /* height: 6rem; */
         display: flex;
         flex-direction: column; 
-        /* flex-wrap: wrap; */
-
+        flex-wrap: wrap;
       & img {
-        /* flex:1; */
+        flex:1;
         margin-left: 0.5rem;
         display: flex;
         flex-direction: column;
@@ -52,6 +51,8 @@ export const Wrapper = styled.div`
         color: #666;
         width: 4rem;
         /* word-wrap:break-word; */
+        /* white-space: normal; */
+        height: 2rem;
         text-align: center;
       }
     }

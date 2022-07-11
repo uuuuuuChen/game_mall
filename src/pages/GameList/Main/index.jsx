@@ -4,29 +4,58 @@ import classnames from 'classnames'
 // import { Badge } from 'antd-mobile'
 import { Wrapper } from './style'
 
-export default function Main({games}) {
+export default function Main(props) {
+    const {games, AddList} = props
     const [activeKey, setActiveKey] = useState('key1')
-    const tabs = [
+    const tabs1 = [
         {
             key: 'key1',
             title: '全部',
-            // badge: Badge.dot,
-          },
-          {
+        },
+        {
             key: 'key2',
             title: '热门',
-            // badge: '5',
-          },
-          {
+        },
+        {
             key: 'key3',
             title: '竞技',
-            // badge: '99+',
-            // disabled: true,
-          },
+        },
+        {
+            key: 'key4',
+            title: '体育',
+        },
+        {
+            key: 'key5',
+            title: '休闲',
+        },
+    ]
+    const tabs2 = [
+        {
+            key: 'key1',
+            title: '全部',
+        },
+        {
+            key: 'key2',
+            title: '热门',
+        },
+        {
+            key: 'key3',
+            title: '竞技',
+        },
+        {
+            key: 'key4',
+            title: '策略',
+        },
+        {
+            key: 'key5',
+            title: '休闲',
+        },
     ]
     const pcgame = games.filter(item => item.tag == 'pc')
     const hotpcgame = games.filter(item => item.popule == 'pctrue')
     const pcjingjigame = games.filter(item => item.classify == 'pc竞技' )
+    const PEgame = games.filter(item => item.classify == '体育' )
+    const pcxiuxiangame = games.filter(item => item.classify == 'pc休闲' )
     const renderTabs = () => {
         return (
             <Wrapper>
@@ -35,7 +64,7 @@ export default function Main({games}) {
                 <SideBar activeKey={activeKey} onChange={setActiveKey}
                 style={{ '--width': '65px','--background-color':'#fff' }}>
                 {
-                    tabs.map(item => (
+                    tabs1.map(item => (
                         <SideBar.Item key={item.key} title={item.title} />
                     ))
                 }
@@ -50,7 +79,9 @@ export default function Main({games}) {
                     >
                     {pcgame.map(item => {
                         return (
-                            <li className='game-list' key={item.cid + Math.random()*10}>
+                            <li className='game-list' key={item.cid + Math.random()*10}
+                                onClick={() => AddList(item.cid)}
+                            >
                                 <img src={item.img} alt="" key={item.cid}/>
                                 <span key={item.cid + Math.random()*10}>{item.desc}</span>
                             </li>
@@ -62,9 +93,11 @@ export default function Main({games}) {
                         activeKey === 'key2' && { active:activeKey === 'key2'}
                     )}
                     >
-                        {hotpcgame.map(item => {
+                    {hotpcgame.map(item => {
                         return (
-                            <li className='game-list' key={item.cid + Math.random()*10}>
+                            <li className='game-list' key={item.cid + Math.random()*10}
+                            onClick={() => AddList(item.cid)}
+                            >
                                 <img src={item.img} alt="" key={item.cid}/>
                                 <span key={item.cid + Math.random()*10}>{item.desc}</span>
                             </li>
@@ -79,7 +112,41 @@ export default function Main({games}) {
                     >
                     {pcjingjigame.map(item => {
                         return (
-                            <li className='game-list' key={item.cid + Math.random()*10}>
+                            <li className='game-list' key={item.cid + Math.random()*10}
+                            onClick={() => AddList(item.cid)}
+                            >
+                                <img src={item.img} alt="" key={item.cid}/>
+                                <span key={item.cid + Math.random()*10}>{item.desc}</span>
+                            </li>
+                        )
+                    })}
+                    </div>
+                    <div className={classnames(
+                        {content:true},
+                        activeKey === 'key4' && {active:activeKey === 'key4'}
+                    )}
+                    >
+                    {PEgame.map(item => {
+                        return (
+                            <li className='game-list' key={item.cid + Math.random()*10}
+                            onClick={() => AddList(item.cid)}    
+                            >
+                                <img src={item.img} alt="" key={item.cid}/>
+                                <span key={item.cid + Math.random()*10}>{item.desc}</span>
+                            </li>
+                        )
+                    })}
+                    </div>
+                    <div className={classnames(
+                        {content:true},
+                        activeKey === 'key5' && {active:activeKey === 'key5'}
+                    )}
+                    >
+                    {pcxiuxiangame.map(item => {
+                        return (
+                            <li className='game-list' key={item.cid + Math.random()*10}
+                                onClick={() => AddList(item.cid)}
+                            >
                                 <img src={item.img} alt="" key={item.cid}/>
                                 <span key={item.cid + Math.random()*10}>{item.desc}</span>
                             </li>
@@ -95,6 +162,8 @@ export default function Main({games}) {
     const mobilegame = games.filter(item => item.tag == 'mobile')
     const hotmobilegame = games.filter(item => item.popule == true)
     const jingjigame = games.filter(item => item.classify == '竞技' )
+    const celuegame = games.filter(item => item.classify == '策略' )
+    const xiuxiangame = games.filter(item => item.classify == '休闲' )
     const renderTabs2 = () => {
         return (
             <Wrapper>
@@ -103,7 +172,7 @@ export default function Main({games}) {
                 <SideBar activeKey={activeKey} onChange={setActiveKey}
                 style={{ '--width': '65px','--background-color':'#fff' }}>
                 {
-                    tabs.map(item => (
+                    tabs2.map(item => (
                         <SideBar.Item key={item.key} title={item.title} />
                     ))
                 }
@@ -118,7 +187,9 @@ export default function Main({games}) {
                     >
                     {mobilegame.map(item => {
                         return (
-                            <li className='game-list' key={item.cid + Math.random()*10}>
+                            <li className='game-list' key={item.cid + Math.random()*10}
+                                onClick={() => AddList(item.cid)}
+                            >
                                 <img src={item.img} alt="" key={item.cid}/>
                                 <span key={item.cid + Math.random()*10}>{item.desc}</span>
                             </li>
@@ -132,7 +203,9 @@ export default function Main({games}) {
                     >
                     {hotmobilegame.map(item => {
                         return (
-                            <li className='game-list' key={item.cid + Math.random()*10}>
+                            <li className='game-list' key={item.cid + Math.random()*10}
+                            onClick={() => AddList(item.cid)}
+                            >
                                 <img src={item.img} alt="" key={item.cid}/>
                                 <span key={item.cid + Math.random()*10}>{item.desc}</span>
                             </li>
@@ -147,7 +220,41 @@ export default function Main({games}) {
                     >
                     {jingjigame.map(item => {
                         return (
-                            <li className='game-list' key={item.cid + Math.random()*10}>
+                            <li className='game-list' key={item.cid + Math.random()*10}
+                            onClick={() => AddList(item.cid)}
+                            >
+                                <img src={item.img} alt="" key={item.cid}/>
+                                <span key={item.cid + Math.random()*10}>{item.desc}</span>
+                            </li>
+                        )
+                    })}
+                    </div>
+                    <div className={classnames(
+                        {content:true},
+                        activeKey === 'key4' && {active:activeKey === 'key4'}
+                    )}
+                    >
+                    {celuegame.map(item => {
+                        return (
+                            <li className='game-list' key={item.cid + Math.random()*10}
+                            onClick={() => AddList(item.cid)}
+                            >
+                                <img src={item.img} alt="" key={item.cid}/>
+                                <span key={item.cid + Math.random()*10}>{item.desc}</span>
+                            </li>
+                        )
+                    })}
+                    </div>
+                    <div className={classnames(
+                        {content:true},
+                        activeKey === 'key5' && {active:activeKey === 'key5'}
+                    )}
+                    >
+                    {xiuxiangame.map(item => {
+                        return (
+                            <li className='game-list' key={item.cid + Math.random()*10}
+                                onClick={() => AddList(item.cid)}
+                            >
                                 <img src={item.img} alt="" key={item.cid}/>
                                 <span key={item.cid + Math.random()*10}>{item.desc}</span>
                             </li>
@@ -164,12 +271,12 @@ export default function Main({games}) {
     return (
         <div>
             <Tabs>  
-                <Tabs.Tab title='端游' key='fruits'>
+                <Tabs.Tab title='端游' key='key1'>
                     {
                         renderTabs()
                     }
                 </Tabs.Tab>
-                <Tabs.Tab title='手游' key='vegetables'>
+                <Tabs.Tab title='手游' key='key2'>
                     {
                         renderTabs2()
                     }  

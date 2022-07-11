@@ -8,6 +8,8 @@ export const getGamesInfoRequest = () => axiosInstance.get('/gameinfo')
 
 export const getGameListsRequest = () => axiosInstance.get('/gamelists')
 
+export const getSelectedGameListsRequest = () => axiosInstance.get('/selectedgamelist')
+
 export const getSalesInfoRequest = () => axiosInstance.get('/saleinfo')
 
 export const getActivityLolInfoRequest = () => axiosInstance.get('/lolactivitiesinfo')

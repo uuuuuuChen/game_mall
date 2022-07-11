@@ -45,7 +45,7 @@ export const GameWrapper = styled.div`
     .list {
         margin-left: 0.3rem;
         /* width: 100%; */
-        div {
+        li {
             margin: 0 0.5rem;
             margin-bottom: 0.4rem;
             display: inline-block;
@@ -56,7 +56,7 @@ export const GameWrapper = styled.div`
             font-size: 0.4rem!important;
             /* line-height: 0.4rem; */
             background: rgb(245,245,245);
-            border: 0.35rem solid rgb(245,245,245);
+            border: 0.25rem solid rgb(245,245,245);
             border-radius: 0.5rem;
         }
     }

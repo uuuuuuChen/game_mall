@@ -3,26 +3,20 @@ import { HeaderWrapper } from './style'
 import { Link, NavLink,useLocation } from 'react-router-dom'
 import GameList from '@/pages/GameList'
 import { Popup, Space } from 'antd-mobile'
-// import Swiper from 'swiper'
 import classnames from 'classnames'
 
 function Header() {
     // const [title, setTitle] = useState('精选')
     const [visible, setVisible] = useState(false)
-    const { pathname } = useLocation()
-
-    // let homeNavs = [
-    //     { id: 1, desc: '精选', path: '/'},
-    //     { id: 2, desc: '英雄联盟', path: '/lol'},
-    //     { id: 3, desc: 'CF穿越火线', path: '/cf'},
-    // ]
+    const {pathname } = useLocation()
+    
     const onMaskClick= () => {
         setVisible(false)
     }
     return (
         <HeaderWrapper>
                 <div className="nav-box">
-                    <i className='iconfont icon-saoyisao'></i>
+                    <div><i className='iconfont icon-saoyisao'></i></div>
                     <Link 
                         to='/'
                         className={classnames({navitem:true},{active:pathname == '/home' || pathname == '/'})}

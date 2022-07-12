@@ -20,6 +20,14 @@ const deleteList = (data) => ({
     type: actionTypes.DETELE_LIST,
     data
 })
+const deleteSearchList = (data) => ({
+    type: actionTypes.DETELE_SEARCH_LIST,
+    data
+})
+const searchResult = (data) => ({
+    type: actionTypes.GET_SEARCHRESULT,
+    data
+})
 const changeLoading = (data) => ({
     type: actionTypes.CHANGE_GAMELISTLOADING,
     data
@@ -54,5 +62,18 @@ export const DeleteListData = (data) => {
     return (dispatch) => {
        dispatch(deleteList(data))
     //    dispatch(changeSelectedGameList(data.data))
+    }
+}
+
+export const DeleteSearchListData = (data) => {
+    return (dispatch) => {
+       dispatch(deleteSearchList(data))
+    }
+}
+
+export const getSearchResult = (query) => {
+    return (dispatch) => {
+        // console.log(query)
+        dispatch(searchResult(query))
     }
 }

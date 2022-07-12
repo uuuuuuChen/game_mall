@@ -1,23 +1,15 @@
-import React, {useEffect, useState, memo} from 'react'
+import React, { useEffect, useState, memo } from 'react'
 import { Wrapper } from './style'
-// import { getActivities } from '@/api/request'
+import LazyLoad from 'react-lazyload'
 import { Link } from 'react-router-dom'
+import game from "@/assets/images/game.png"
 
-function Activities({activitylist}) {
-    // const [activities,setActivities] = useState([])
-    // useEffect(()=> {
-    //     (async() => {
-    //         let { data } = await getActivities()
-    //         // console.log(data)
-    //         setActivities(data)
-    //     })()
-    // }, [])
+function Activities({ activitylist }) {
     return (
         <Wrapper>
             <div className='title'>
                 <h3>精彩活动</h3>
                 <a href='/home'>
-                    {/* 更多<i className='iconfont icon-youjiantou icon-right'></i> */}
                     <i className='fa fa-chevron-circle-right icon-right'></i>
                 </a>
             </div>
@@ -25,14 +17,17 @@ function Activities({activitylist}) {
                 {
                     activitylist.map(item => {
                         return (
-                            <Link 
+                            <Link
                                 to='/home'
-                                // key={Math.random()*1000}
-                                key={Math.random()*1000 + item.aid}
-                                // className={`activities${item.aid}`}
+                                key={Math.random() * 1000 + item.aid}
                                 className={item.aid}
                             >
-                                <img src={item.img} alt="" />
+                                <LazyLoad placeholder={<img width='100%'
+                                    height='100%' src={game} />}
+                                    key={Math.random() * 1000 + item.aid}   
+                                >
+                                    <img src={item.img} alt="" />
+                                </LazyLoad>
                                 <span>{item.desc}</span>
                             </Link>
                         )
@@ -42,4 +37,4 @@ function Activities({activitylist}) {
         </Wrapper>
     )
 }
-export default memo(Activities)
+export default Activities

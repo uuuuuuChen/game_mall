@@ -3,6 +3,7 @@ import * as actionTypes from './constants'
 const defaultState = {
     games: [],
     selectedgamelist: [],
+    searchresult: [],
     loading: true
 }
 export default (state = defaultState,action) => {
@@ -48,6 +49,31 @@ export default (state = defaultState,action) => {
                 games: newGameList,
                 selectedgamelist
             }
+        case actionTypes.GET_SEARCHRESULT:
+                // console.log(state,action.data)
+                let result = state.games.filter(
+                    todo => todo.desc.includes(action.data) || todo.classify.includes(action.data)
+                    ) 
+                return {
+                    ...state,
+                    searchresult: result
+                }
+            case actionTypes.DETELE_SEARCH_LIST:
+                console.log(action.data)
+                let addedGame1 = state.games.find(item =>  item.cid == action.data)
+                let deletesearchResult = state.searchresult.filter(item => item.cid != action.data)
+                let games1 = state.games.filter(item => item.cid != action.data)
+                // console.log(addedGame)
+                let newSelectedGameList1 = [
+                    ...state.selectedgamelist,
+                    addedGame1
+                ]
+                return {
+                    ...state,
+                    games: games1,
+                    selectedgamelist: newSelectedGameList1,
+                    searchresult: deletesearchResult
+                }
         case actionTypes.CHANGE_GAMELISTLOADING:
             return {
                 ...state,

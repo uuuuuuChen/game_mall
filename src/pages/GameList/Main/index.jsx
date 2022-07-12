@@ -1,5 +1,6 @@
 import React, { useState }from 'react'
 import { Tabs, SideBar } from 'antd-mobile'
+import { AddCircleOutline  } from 'antd-mobile-icons'
 import classnames from 'classnames'
 // import { Badge } from 'antd-mobile'
 import { Wrapper } from './style'
@@ -82,6 +83,7 @@ export default function Main(props) {
                             <li className='game-list' key={item.cid + Math.random()*10}
                                 onClick={() => AddList(item.cid)}
                             >
+                                <i className='fa fa-plus-circle icon'/>
                                 <img src={item.img} alt="" key={item.cid}/>
                                 <span key={item.cid + Math.random()*10}>{item.desc}</span>
                             </li>
@@ -98,6 +100,7 @@ export default function Main(props) {
                             <li className='game-list' key={item.cid + Math.random()*10}
                             onClick={() => AddList(item.cid)}
                             >
+                                <i className='fa fa-plus-circle icon'/>
                                 <img src={item.img} alt="" key={item.cid}/>
                                 <span key={item.cid + Math.random()*10}>{item.desc}</span>
                             </li>
@@ -115,6 +118,7 @@ export default function Main(props) {
                             <li className='game-list' key={item.cid + Math.random()*10}
                             onClick={() => AddList(item.cid)}
                             >
+                                <i className='fa fa-plus-circle icon'/>
                                 <img src={item.img} alt="" key={item.cid}/>
                                 <span key={item.cid + Math.random()*10}>{item.desc}</span>
                             </li>
@@ -131,6 +135,7 @@ export default function Main(props) {
                             <li className='game-list' key={item.cid + Math.random()*10}
                             onClick={() => AddList(item.cid)}    
                             >
+                                <i className='fa fa-plus-circle icon'/>
                                 <img src={item.img} alt="" key={item.cid}/>
                                 <span key={item.cid + Math.random()*10}>{item.desc}</span>
                             </li>
@@ -147,6 +152,7 @@ export default function Main(props) {
                             <li className='game-list' key={item.cid + Math.random()*10}
                                 onClick={() => AddList(item.cid)}
                             >
+                                <i className='fa fa-plus-circle icon'/>
                                 <img src={item.img} alt="" key={item.cid}/>
                                 <span key={item.cid + Math.random()*10}>{item.desc}</span>
                             </li>
@@ -190,6 +196,7 @@ export default function Main(props) {
                             <li className='game-list' key={item.cid + Math.random()*10}
                                 onClick={() => AddList(item.cid)}
                             >
+                                <i className='fa fa-plus-circle icon'/>
                                 <img src={item.img} alt="" key={item.cid}/>
                                 <span key={item.cid + Math.random()*10}>{item.desc}</span>
                             </li>
@@ -206,6 +213,7 @@ export default function Main(props) {
                             <li className='game-list' key={item.cid + Math.random()*10}
                             onClick={() => AddList(item.cid)}
                             >
+                                <i className='fa fa-plus-circle icon'/>
                                 <img src={item.img} alt="" key={item.cid}/>
                                 <span key={item.cid + Math.random()*10}>{item.desc}</span>
                             </li>
@@ -223,6 +231,7 @@ export default function Main(props) {
                             <li className='game-list' key={item.cid + Math.random()*10}
                             onClick={() => AddList(item.cid)}
                             >
+                                <i className='fa fa-plus-circle icon'/>
                                 <img src={item.img} alt="" key={item.cid}/>
                                 <span key={item.cid + Math.random()*10}>{item.desc}</span>
                             </li>
@@ -239,6 +248,7 @@ export default function Main(props) {
                             <li className='game-list' key={item.cid + Math.random()*10}
                             onClick={() => AddList(item.cid)}
                             >
+                                <i className='fa fa-plus-circle icon'/>
                                 <img src={item.img} alt="" key={item.cid}/>
                                 <span key={item.cid + Math.random()*10}>{item.desc}</span>
                             </li>
@@ -255,6 +265,7 @@ export default function Main(props) {
                             <li className='game-list' key={item.cid + Math.random()*10}
                                 onClick={() => AddList(item.cid)}
                             >
+                                <i className='fa fa-plus-circle icon'/>
                                 <img src={item.img} alt="" key={item.cid}/>
                                 <span key={item.cid + Math.random()*10}>{item.desc}</span>
                             </li>

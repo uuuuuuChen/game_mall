@@ -35,7 +35,19 @@ export const Wrapper = styled.div`
         display: flex;
         flex-direction: column; 
         flex-wrap: wrap;
+        position: relative;
+      & .icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: rgb(255,207,47);
+        height: 0.6rem;
+        background-color: black;
+        border-radius: 50%;
+        /* border-radius: 2rem; */
+      }  
       & img {
+        
         flex:1;
         margin-left: 0.5rem;
         display: flex;

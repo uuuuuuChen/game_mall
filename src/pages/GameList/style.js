@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const GameWrapper = styled.div`
-    /* height: 100vh;
+    height: 100vh;
     overflow: scroll;
-    overflow-y: auto; */
+    overflow-y: auto;
     h2 {
 
         display: inline-flex;
@@ -57,12 +57,13 @@ export const GameWrapper = styled.div`
             display: inline-block;
             text-align: center;
             /* width: 4.5rem; */
-            height: 1.5rem;
+            /* height: 1.5rem; */
             margin-right: 0.5rem;
-            font-size: 0.4rem!important;
-            line-height: 1rem;
+            /* font-size: 0.4rem!important; */
+            line-height: 1.5rem;
             background: rgb(245,245,245);
-            border: 0.25rem solid rgb(245,245,245);
+            border-left: 0.25rem solid rgb(245,245,245);
+            border-right: 0.25rem solid rgb(245,245,245);
             border-radius: 0.5rem;
             position: relative;
             & i {
@@ -111,6 +112,7 @@ export const Container = styled.li`
         /* display: flex;
         flex-direction: row; */
         /* justify-content: space-around; */
+        position: relative;
         img {
             /* width: 100%; */
             display: inline-block;
@@ -127,7 +129,10 @@ export const Container = styled.li`
         }
         & .icon {
             line-height: 2.5rem;
-            float: right;
+            position: absolute;
+            /* float: right; */
+            top: 0;
+            right: 1rem;
             color: rgb(255,207,47);
             height: 0.6rem;
             /* background-color: black; */

@@ -38,16 +38,15 @@ export const Wrapper = styled.div`
         position: relative;
       & .icon {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 0.1rem;
+        right: 0.1rem;
         color: rgb(255,207,47);
-        height: 0.6rem;
-        background-color: black;
-        border-radius: 50%;
+        /* height: 0.6rem; */
+        /* background-color: black; */
+        /* border-radius: 50%; */
         /* border-radius: 2rem; */
       }  
       & img {
-        
         flex:1;
         margin-left: 0.5rem;
         display: flex;
@@ -58,7 +57,7 @@ export const Wrapper = styled.div`
         height: 4rem;
       }
       & span {
-        font-size: 0.4rem;
+        font-size: 0.6rem;
         margin-left: 0.3rem;
         color: #666;
         width: 4rem;

@@ -16,6 +16,7 @@ justify-content: space-between;
 .icon-right {
     width: 0.5rem;
     float: right;
+    color: rgb(210,210,210);
 }
 }
 
@@ -30,7 +31,7 @@ justify-content: space-between;
     & .swiper-slide {
         width: 12rem!important;
         /* height: 5rem; */
-        border: 1px solid #ccc;
+        border: 1px solid rgb(245,245,245);
         margin-right: 0.5rem;
   
     a {

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
 /* height: 7.5rem; */
-border-bottom: 1px solid #ccc;
+border-bottom: 1px solid rgb(245,245,245);
 .title {
 margin-top: 1rem;
 margin-left: 1rem;
@@ -16,6 +16,7 @@ justify-content: space-between;
 .icon-right {
     width: 0.5rem;
     float: right;
+    color: rgb(210,210,210);
 }
 }
 .lol-sale {

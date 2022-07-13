@@ -17,6 +17,7 @@ margin-bottom: 2.5rem;
     .icon-right {
         width: 0.5rem;
         float: right;
+        color: rgb(210,210,210);
     }
     }
 

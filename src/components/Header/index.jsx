@@ -3,38 +3,79 @@ import { HeaderWrapper } from './style'
 import { Link, NavLink,useLocation } from 'react-router-dom'
 import GameList from '@/pages/GameList'
 import { Popup, Space } from 'antd-mobile'
+import { connect } from 'react-redux'
+import { getSelectedGameList } from '../../pages/GameList/store/actionCreator'
 import classnames from 'classnames'
+import Swiper from 'swiper'
 
-function Header() {
-    // const [title, setTitle] = useState('精选')
+function Header(props) {
     const [visible, setVisible] = useState(false)
+    const { selectedgamelist, getSelectedGameListDispatch}  = props
     const {pathname } = useLocation()
-    
+
+
     const onMaskClick= () => {
         setVisible(false)
+    }
+
+    useEffect(() => {
+        getSelectedGameListDispatch()
+        let swiper = null;
+        if (swiper) return 
+        swiper = new Swiper('.sale',{
+            // loop: true,
+            // observer: true, //修改swiper自己或子元素时，自动初始化swiper，默认为false
+            // observeParents: true, //修改swiper的父元素时，自动初始化swiper
+            freeMode: true,
+            // momentum: false
+        })
+    }, [])
+
+    const renderMyGames = () => {
+        return (
+            selectedgamelist.map(item => {
+                return (
+                    <>
+                    <div className="swiper-slide" key={item.cid}>
+                    <NavLink
+                        to={item.path}
+                        key={item.cid}    
+                    >
+                        <span>{item.desc}</span>
+                    </NavLink>
+                    </div>
+                    </>
+                )
+            })
+        )
     }
     return (
         <HeaderWrapper>
                 <div className="nav-box">
                     <div><i className='iconfont icon-saoyisao'></i></div>
-                    <Link 
-                        to='/'
-                        className={classnames({navitem:true},{active:pathname == '/home' || pathname == '/'})}
-                    >
-                        精选
-                    </Link>
-                    <Link 
+                    <div className="sale swiper-container">
+                        <div className="swiper-wrapper">
+                            <div className="swiper-slide"> 
+                                <NavLink to='/'>
+                                    <span>精选</span>
+                                </NavLink>
+                               
+                            </div>
+                            { renderMyGames() }
+                        </div>
+                    </div>
+                    {/* <NavLink 
                         to='/lol'
                         className={classnames({navitem:true},{active:pathname == '/lol'})}
                     >
                         英雄联盟
-                    </Link>
+                    </NavLink>
                     <Link 
                         to='/cf'
                         className={classnames({navitem:true},{active:pathname == '/cf'})}
                     >
                         CF穿越火线
-                    </Link>
+                    </Link> */}
                     <div 
                         to='/'
                         onClick={() => {
@@ -59,4 +100,18 @@ function Header() {
     )
 }
 
-export default memo(Header)
+const mapStateToProps = (state) => {
+    return {
+        selectedgamelist: state.gamelist.selectedgamelist,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getSelectedGameListDispatch() {
+            dispatch(getSelectedGameList())
+        }
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(React.memo(Header))

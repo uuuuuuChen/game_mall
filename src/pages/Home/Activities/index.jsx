@@ -22,12 +22,12 @@ function Activities({ activitylist }) {
                                 key={Math.random() * 1000 + item.aid}
                                 className={item.aid}
                             >
-                                <LazyLoad placeholder={<img width='100%'
+                                {/* <LazyLoad placeholder={<img width='100%'
                                     height='100%' src={game} />}
                                     key={Math.random() * 1000 + item.aid}   
-                                >
+                                > */}
                                     <img src={item.img} alt="" />
-                                </LazyLoad>
+                                {/* </LazyLoad> */}
                                 <span>{item.desc}</span>
                             </Link>
                         )

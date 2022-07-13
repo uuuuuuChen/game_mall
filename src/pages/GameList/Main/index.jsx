@@ -66,7 +66,9 @@ export default function Main(props) {
                 style={{ '--width': '65px','--background-color':'#fff' }}>
                 {
                     tabs1.map(item => (
-                        <SideBar.Item key={item.key} title={item.title} />
+                        <SideBar.Item key={item.key} 
+                        title={<span style={{fontSize:"0.7rem"}}>{item.title}</span>
+                    }/>
                     ))
                 }
                 </SideBar>
@@ -179,7 +181,9 @@ export default function Main(props) {
                 style={{ '--width': '65px','--background-color':'#fff' }}>
                 {
                     tabs2.map(item => (
-                        <SideBar.Item key={item.key} title={item.title} />
+                        <SideBar.Item key={item.key} 
+                        title={<span style={{fontSize:"0.7rem"}}>{item.title}</span>
+                    } />
                     ))
                 }
                 </SideBar>

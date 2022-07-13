@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
 padding-bottom: .5rem;
-border-bottom: 1px solid #ccc;
+border-bottom: 1px solid rgb(245,245,245);
     .title {
     margin-top: 0.5rem;
     margin-left: 1rem;
@@ -16,6 +16,7 @@ border-bottom: 1px solid #ccc;
     .icon-right {
         width: 0.5rem;
         float: right;
+        color: rgb(210,210,210);
     }
     }
 

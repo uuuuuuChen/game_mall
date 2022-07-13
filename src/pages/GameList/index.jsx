@@ -130,10 +130,10 @@ const GameList = (props) => {
                         }
                     }}
                     style={{
-                        '--border-radius': '100px',
+                        '--border-radius': '5rem',
                         // '--background': '#ffffff',
-                        '--height': '20px',
-                        '--padding-left': '12px',
+                        '--height': '1.5rem',
+                        '--padding-left': '0.6rem',
                     }}
                 />
             </div>

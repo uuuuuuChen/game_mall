@@ -25,7 +25,6 @@ export default (state = defaultState,action) => {
                 // 不能用下标  要用id
                 let addedGame = state.games.find(item =>  item.cid == action.data)
                 let games = state.games.filter(item => item.cid != action.data)
-                // console.log(addedGame)
                 let newSelectedGameList = [
                     ...state.selectedgamelist,
                     addedGame
@@ -33,21 +32,26 @@ export default (state = defaultState,action) => {
                 return {
                     ...state,
                     games,
-                    selectedgamelist: newSelectedGameList
+                    selectedgamelist: newSelectedGameList,
                 }
             case actionTypes.DETELE_LIST:
-                // console.log(action.data)
-                let deleteGame = state.selectedgamelist.find(item =>  item.cid == action.data)
+                let deleteGame = state.selectedgamelist.find(item => item.cid == action.data)
                 let selectedgamelist = state.selectedgamelist.filter(item => item.cid != action.data)
                 let newGameList = [
                     ...state.games,
                     deleteGame
                 ]
-                // console.log(deleteGame, selectedgamelist,newGameList)
+                let newSearchResult = [
+                    ...state.searchresult,
+                    deleteGame
+                ]   
+                // console.log(newSearchResult)
             return {
                 ...state,
                 games: newGameList,
-                selectedgamelist
+                selectedgamelist,
+                searchresult: newSearchResult
+
             }
         case actionTypes.GET_SEARCHRESULT:
                 // console.log(state,action.data)
@@ -59,7 +63,7 @@ export default (state = defaultState,action) => {
                     searchresult: result
                 }
             case actionTypes.DETELE_SEARCH_LIST:
-                console.log(action.data)
+                // console.log(action.data)
                 let addedGame1 = state.games.find(item =>  item.cid == action.data)
                 let deletesearchResult = state.searchresult.filter(item => item.cid != action.data)
                 let games1 = state.games.filter(item => item.cid != action.data)

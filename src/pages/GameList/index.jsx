@@ -80,6 +80,7 @@ const GameList = (props) => {
             )
         })
     }
+    // console.log(searchResult)
     const renderSearchList = () => {
         return searchResult.map(item => {
             return (

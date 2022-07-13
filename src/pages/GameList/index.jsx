@@ -27,6 +27,7 @@ const GameList = (props) => {
     const [activekey, setActivekey] = useState(false)
     const [query, setQuery] = useState('');
     const [show, setShow] = useState(false)
+    const queryRef = useRef()
     const navigate = useNavigate()
 
     const { 
@@ -48,6 +49,13 @@ const GameList = (props) => {
     const onSetQuery = (query) => {
         setQuery(query)
     }
+
+    // mount 挂载 聚焦输入框
+    useEffect(() => {
+        // 挂载后
+        queryRef.current.focus() 
+    }, [])
+
     useEffect(() => {
         getGameListDispatch()
         getSelectedGameListDispatch()
@@ -58,7 +66,7 @@ const GameList = (props) => {
             getSearchResultDispatch(query)  
         }
     }, [query])
-    
+
     // console.log(query,searchResult)
     const onAdd = () => {
         onSetQuery(value)
@@ -121,6 +129,7 @@ const GameList = (props) => {
                 {/* fa fa-close (alias) */}
                 <i className='iconfont icon-guanbi icon-right' onClick={onMaskClick}></i>
                 <SearchBar
+                    ref={queryRef}
                     onSearch={onAdd}
                     placeholder='搜索想要添加的游戏'
                     className='search1'
@@ -129,6 +138,7 @@ const GameList = (props) => {
                         setValue(e)
                         if(e == '' || !e) {
                             setShow(!show)
+                            queryRef.current.focus()
                             // onAdd()
                         }
                     }}

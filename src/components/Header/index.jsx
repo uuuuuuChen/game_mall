@@ -1,18 +1,15 @@
-import React,{ useState,useEffect, memo } from 'react'
+import React,{ useState,useEffect } from 'react'
 import { HeaderWrapper } from './style'
-import { Link, NavLink,useLocation } from 'react-router-dom'
+import {  NavLink } from 'react-router-dom'
 import GameList from '@/pages/GameList'
 import { Popup, Space } from 'antd-mobile'
 import { connect } from 'react-redux'
 import { getSelectedGameList } from '../../pages/GameList/store/actionCreator'
-import classnames from 'classnames'
 import Swiper from 'swiper'
 
 function Header(props) {
     const [visible, setVisible] = useState(false)
     const { selectedgamelist, getSelectedGameListDispatch}  = props
-    const {pathname } = useLocation()
-
 
     const onMaskClick= () => {
         setVisible(false)

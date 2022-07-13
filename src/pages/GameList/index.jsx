@@ -93,6 +93,7 @@ const GameList = (props) => {
                             () => { 
                                 DeleteSearchList(item.cid)
                                 setShow(!show)
+                                setValue('')
                         }
                     }
                     >
@@ -124,6 +125,7 @@ const GameList = (props) => {
                         setValue(e)
                         if(e == '' || !e) {
                             setShow(!show)
+                            // onAdd()
                         }
                     }}
                     style={{
@@ -145,7 +147,7 @@ const GameList = (props) => {
                 }}
                 >  
                     <Container>
-                        <LeftOutline onClick={() => setShow(!show)}/>
+                        {/* <LeftOutline onClick={() => setShow(!show)}/> */}
                         
                         { searchResult == false ? renderNull() : renderSearchList()
                         }

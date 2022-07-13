@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const GameWrapper = styled.div`
-    height: 100vh;
+    /* height: 100vh;
     overflow: scroll;
-    overflow-y: auto;
+    overflow-y: auto; */
     h2 {
 
         display: inline-flex;

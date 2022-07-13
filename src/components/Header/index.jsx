@@ -23,28 +23,26 @@ function Header(props) {
         let swiper = null;
         if (swiper) return 
         swiper = new Swiper('.sale',{
-            // loop: true,
-            // observer: true, //修改swiper自己或子元素时，自动初始化swiper，默认为false
-            // observeParents: true, //修改swiper的父元素时，自动初始化swiper
-            freeMode: true,
-            // momentum: false
+            freeMode: {
+                enabled: true,
+                // momentum: false
+              },
+            
         })
     }, [])
 
     const renderMyGames = () => {
         return (
             selectedgamelist.map(item => {
-                return (
-                    <>
+                return (                   
                     <div className="swiper-slide" key={item.cid}>
                     <NavLink
                         to={item.path}
                         key={item.cid}    
                     >
-                        <span>{item.desc}</span>
+                        <span key={item.cid}>{item.desc}</span>
                     </NavLink>
                     </div>
-                    </>
                 )
             })
         )
@@ -76,13 +74,13 @@ function Header(props) {
                     >
                         CF穿越火线
                     </Link> */}
-                    <div 
-                        to='/'
+                    <div>
+                        <i  className='iconfont icon-jiahao icon-right' 
                         onClick={() => {
                             setVisible(true)
-                          }}
-                    >
-                        <i  className='iconfont icon-jiahao icon-right' ></i>
+                        }}>
+                        
+                          </i>
                         <Space direction='vertical'>
                         <Popup
                             // style={{'--z-index':'9999'}}

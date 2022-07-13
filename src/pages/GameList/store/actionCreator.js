@@ -36,9 +36,8 @@ export const getSelectedGameList = () => {
     return (dispatch) => {
         getSelectedGameListsRequest()
             .then(data => {
-                // console.log(data)
                 dispatch(changeSelectedGameList(data.data))
-                dispatch(changeLoading(false))
+                
             })
     }
 }
@@ -47,7 +46,7 @@ export const getGameList = () => {
         getGameListsRequest()
             .then(data => {
                 dispatch(changeGameList(data.data))
-                
+                dispatch(changeLoading(false))  
             })
     }
 }

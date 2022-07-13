@@ -27,6 +27,7 @@ export const HeaderWrapper = styled.div`
             position: relative;
             text-align: center;
             font-size: 0.65rem;
+            /* line-height: 0.65rem; */
             color: #666;
 
             &.active {

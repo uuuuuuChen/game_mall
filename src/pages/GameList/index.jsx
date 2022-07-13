@@ -49,20 +49,23 @@ const GameList = (props) => {
         setQuery(query)
     }
     useEffect(() => {
+        getGameListDispatch()
+        getSelectedGameListDispatch()
+    }, [])
+
+    useEffect(() => {
         if(query.trim()){
             getSearchResultDispatch(query)  
         }
     }, [query])
+    
     // console.log(query,searchResult)
     const onAdd = () => {
         onSetQuery(value)
         setShow(true)
      }
 
-    useEffect(() => {
-        getGameListDispatch()
-        getSelectedGameListDispatch()
-    }, [])
+
     
     const renderGames = () => {
         // console.log('selectedgameList');

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef,useMemo } from 'react';
 import { GameWrapper, Container } from './style'
 import { SearchBar, List} from 'antd-mobile'
 import { LeftOutline, AddCircleOutline  } from 'antd-mobile-icons'
@@ -7,6 +7,7 @@ import classnames from 'classnames'
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group'
 import { useNavigate } from 'react-router-dom'
+import { debounce } from '@/utils/utils'
 import { 
     getGameList,
     getSelectedGameList,
@@ -46,9 +47,20 @@ const GameList = (props) => {
         DeleteSearchList,
     } = props
 
+
+    
     const onSetQuery = (query) => {
         setQuery(query)
     }
+    // useMemo 可以缓存上一次函数计算的结果
+    let onSetQueryDebounce = useMemo(() => {
+        return debounce(onSetQuery, 500)
+    }, [onSetQuery])
+
+    useEffect(() => {
+        // query更新
+        onSetQueryDebounce(query)
+    }, [value])
 
     // mount 挂载 聚焦输入框
     useEffect(() => {
@@ -68,7 +80,7 @@ const GameList = (props) => {
     }, [query])
 
     // console.log(query,searchResult)
-    const onAdd = () => {
+    const onAdd = (value) => {
         onSetQuery(value)
         setShow(true)
      }
@@ -127,15 +139,23 @@ const GameList = (props) => {
             <Toast show={loading} icon="loading">加载中</Toast>
             <div className='search'>
                 {/* fa fa-close (alias) */}
-                <i className='iconfont icon-guanbi icon-right' onClick={onMaskClick}></i>
+                <i className='iconfont icon-guanbi icon-right' onClick={() => {
+                    onMaskClick()
+                    setShow(false)
+                    setValue('')
+                    queryRef.current.focus()
+                    }}></i>
                 <SearchBar
                     ref={queryRef}
-                    onSearch={onAdd}
+                    // onSearch={onAdd}
                     placeholder='搜索想要添加的游戏'
                     className='search1'
                     value={value}
                     onChange={ e => {
                         setValue(e)
+                        onAdd(e)
+                        // setQuery(e)
+                        console.log(query)
                         if(e == '' || !e) {
                             setShow(!show)
                             queryRef.current.focus()

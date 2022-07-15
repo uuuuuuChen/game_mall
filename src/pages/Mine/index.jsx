@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 const Mine = () => {
     return (
         <div>
-            Mine
+            本页面会在后续进行完善~
         </div>
     )
 }

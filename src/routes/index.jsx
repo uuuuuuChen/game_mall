@@ -26,24 +26,24 @@ const RoutesConfig = () => {
             {/* <Route path="/gamelist" element={<GameList />}></Route> */}
 
 
-            <Route path="/game1" element={<Home />}></Route>
-            <Route path="/game2" element={<Home />}></Route>
-            <Route path="/game3" element={<Home />}></Route>
-            <Route path="/game4" element={<Home />}></Route>
-            <Route path="/game5" element={<Home />}></Route>
-            <Route path="/game6" element={<Home />}></Route>
-            <Route path="/game7" element={<Home />}></Route>
-            <Route path="/game8" element={<Home />}></Route>
-            <Route path="/game9" element={<Home />}></Route>
-            <Route path="/game10" element={<Home />}></Route>
-            <Route path="/game11" element={<Home />}></Route>
-            <Route path="/game12" element={<Home />}></Route>
-            <Route path="/game13" element={<Home />}></Route>
-            <Route path="/game14" element={<Home />}></Route>
-            <Route path="/game15" element={<Home />}></Route>
-            <Route path="/game16" element={<Home />}></Route>
-            <Route path="/game17" element={<Home />}></Route>
-            <Route path="/game18" element={<Home />}></Route>
+            <Route path="/game1" element={<Mine />}></Route>
+            <Route path="/game2" element={<Mine />}></Route>
+            <Route path="/game3" element={<Mine />}></Route>
+            <Route path="/game4" element={<Mine />}></Route>
+            <Route path="/game5" element={<Mine />}></Route>
+            <Route path="/game6" element={<Mine />}></Route>
+            <Route path="/game7" element={<Mine />}></Route>
+            <Route path="/game8" element={<Mine />}></Route>
+            <Route path="/game9" element={<Mine />}></Route>
+            <Route path="/game10" element={<Mine />}></Route>
+            <Route path="/game11" element={<Mine />}></Route>
+            <Route path="/game12" element={<Mine />}></Route>
+            <Route path="/game13" element={<Mine />}></Route>
+            <Route path="/game14" element={<Mine />}></Route>
+            <Route path="/game15" element={<Mine />}></Route>
+            <Route path="/game16" element={<Mine />}></Route>
+            <Route path="/game17" element={<Mine />}></Route>
+            <Route path="/game18" element={<Mine />}></Route>
             
 
         </Routes>

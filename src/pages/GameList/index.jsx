@@ -183,8 +183,9 @@ const GameList = (props) => {
                     <Container>
                         {/* <LeftOutline onClick={() => setShow(!show)}/> */}
                         
-                        { searchResult == false ? renderNull() : renderSearchList()
-                        }
+                        { searchResult == false ? renderNull() : renderSearchList() }
+                        {/* { renderSearchList() } */}
+                        
                     </Container> 
                 </CSSTransition>
                 }

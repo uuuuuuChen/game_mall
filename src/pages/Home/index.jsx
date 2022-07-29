@@ -8,6 +8,8 @@ import { Wrapper } from './style'
 import { connect } from 'react-redux'
 import { actionCreators }  from './store/index'
 import WeUI from 'react-weui'
+import ShoppingCart from '../ShoppingCart'
+import { Link } from 'react-router-dom'
 
 const { Toast } = WeUI
 
@@ -40,6 +42,12 @@ function Home(props) {
             <Activities activitylist={activitylist}/>
             <GameInfo gameinfo={gameinfo}/>
             <SaleInfo saleinfo={saleinfo}/>
+            <Link to='/shoppingcart'>
+                <div className='cart'>
+                    <i className="iconfont icon-gouwuche1 icon"></i>
+                    <div className='number'>4</div>
+                </div>
+            </Link>
         </Wrapper>
     )
 }

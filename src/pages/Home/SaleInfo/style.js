@@ -53,11 +53,21 @@ justify-content: space-between;
         clear: both;
     }
      a span {
+        position: relative;
         margin-left: 0.3rem;
         margin-bottom: 0.5rem;
         font-size: 0.8rem;
         /* overflow: hidden; */
         text-align: center;
+    }
+    a .icon-cart {
+        font-size: 1rem;
+        position: absolute;
+        bottom: 0.5rem;
+        right: 0.5rem;
+        &.active {
+            color: blue;
+        }
     }
 }
 }
@@ -66,4 +76,5 @@ justify-content: space-between;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
+
 `

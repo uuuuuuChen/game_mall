@@ -10,7 +10,7 @@ function Footer() {
   return (
     <FooterWrapper>
         <div className='footer'>
-            <Link to='/home' className={classnames({active:pathname == '/home' || pathname == '/' || pathname == '/cf'|| pathname == '/lol'})}>
+            <Link to='/' className={classnames({active:pathname == '/home' || pathname == '/' || pathname == '/cf'|| pathname == '/lol'})}>
                 <i className='iconfont icon-shouye'></i>
                 <span>首页</span>
             </Link>

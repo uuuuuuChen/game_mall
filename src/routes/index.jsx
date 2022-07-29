@@ -6,10 +6,10 @@ import { Routes, Route } from 'react-router-dom'
 // const Home = lazy(() => import('../pages/Home'))
 import Home from '@/pages/Home'
 import LOLHome from '@/pages/LOLHome'
+import ShoppingCart from '../pages/ShoppingCart'
 const Find = lazy(() => import('@/pages/Find'))
 const Mine = lazy(() => import('@/pages/Mine'))
 const Judou = lazy(() => import('@/pages/Judou'))
-const GameList = lazy(() => import('@/pages/GameList'))
 
 // Routes 不能和reat-router-dom  一样
 const RoutesConfig = () => {
@@ -22,6 +22,7 @@ const RoutesConfig = () => {
             <Route path='/home' element={<Home />}></Route>
             <Route path="/judou" element={<Judou />}></Route>
             <Route path="/find" element={<Find />}></Route>
+            <Route path="/shoppingcart" element={<ShoppingCart />}></Route>
             <Route path="/mine" element={<Mine />}></Route>
             {/* <Route path="/gamelist" element={<GameList />}></Route> */}
 

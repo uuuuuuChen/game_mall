@@ -46,8 +46,6 @@ const GameList = (props) => {
         DeleteList,
         DeleteSearchList,
     } = props
-
-
     
     const onSetQuery = (query) => {
         setQuery(query)

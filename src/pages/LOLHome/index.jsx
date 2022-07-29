@@ -1,14 +1,14 @@
 import React, { useState, useEffect, Fragment} from 'react'
-// import { } from './style'
+import { Link } from 'react-router-dom'
 import Banners from './Banners'
 import Activities from './Activities'
 import ActivitiesInfo from './ActivitiesInfo'
 import Gift from './Gift'
 import GameInfo from './GameInfo'
-// import SaleInfo from './SaleInfo'
 import { Wrapper } from './style'
 import { connect } from 'react-redux'
 import { actionCreators } from './store/index'
+import { actionCreators1 }  from '../ShoppingCart/store/index'
 import WeUI from 'react-weui'
 
 const { Toast } = WeUI
@@ -20,27 +20,46 @@ function LOLHome(props) {
         lolgift,
         lolinfo,
         loading,
+        goodsList
+    }
+    = props
+    const { 
         getActivityLolInfoDispatch,
         getLolSaleInfoDispatch,
         getLolGiftDispatch,
-        getLolInfoDispatch
+        getLolInfoDispatch,
+        getAllGoodsDispatch,
+        addGoodsDispatch
     }
     = props
     // console.log(activitylolinfo)
+    const addCart = (e, goodsId) => {
+        e.preventDefault();
+        e.stopPropagation();
+        // console.log(goodsId)
+        addGoodsDispatch(goodsId)
+    }
     useEffect(() => {
         getActivityLolInfoDispatch()
         getLolSaleInfoDispatch()
         getLolGiftDispatch()
         getLolInfoDispatch()
+        getAllGoodsDispatch()
     }, [])
     return (
         <Wrapper>
             <Toast show={loading} icon="loading">加载中</Toast>
             <Banners/>
             <ActivitiesInfo activitylolinfo={activitylolinfo}/>
-            <Activities lolsaleinfo={lolsaleinfo}/>
+            <Activities lolsaleinfo={lolsaleinfo} addCart={addCart}/>
             <Gift lolgift={lolgift}/>
             <GameInfo lolinfo={lolinfo}/>
+            <Link to='/shoppingcart'>
+                <div className='cart'>
+                    <i className="iconfont icon-gouwuche1 icon"></i>
+                    <div className='number'>{goodsList.length}</div>
+                </div>
+            </Link>
         </Wrapper>
     )
 }
@@ -51,7 +70,8 @@ const mapStateToProps = (state) => {
         lolsaleinfo: state.lolhome.lolsaleinfo,
         lolgift: state.lolhome.lolgift,
         lolinfo: state.lolhome.lolinfo,
-        loading: state.lolhome.loading
+        loading: state.lolhome.loading,
+        goodsList: state.cart.list,
     }
 }
 
@@ -68,6 +88,12 @@ const mapDispatchToProps = (dispatch) => {
         },
         getLolInfoDispatch() {
             dispatch(actionCreators.getLolInfo())
+        },
+        getAllGoodsDispatch() {
+            dispatch(actionCreators1.getAllGoodsAction())
+        },
+        addGoodsDispatch(data) {
+            dispatch(actionCreators1.addGoodsAction(data))
         }
     }
 }

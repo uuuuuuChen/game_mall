@@ -33,9 +33,14 @@ justify-content: space-between;
         border-radius: 0.5rem;
         margin-bottom: 0.5rem;
     }
-    & a span {
+    & a .span2 {
         /* text-align: center; */
         margin-bottom: 0.5rem;
+    }
+    & a .icon-cart {
+        font-size: 1rem;
+        float: right;
+        margin-right: 0.5rem;
     }
 }
 

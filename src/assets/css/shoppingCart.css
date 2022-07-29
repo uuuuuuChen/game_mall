@@ -2,6 +2,7 @@
     min-height: 100vh;
     background-color: #f8f8f8;
     font-family: Arial, 黑体;
+    /* z-index: 9999; */
 }
 .shoppingCartWrap_header{
     width: 100%;
@@ -80,7 +81,7 @@ align-items: center;
 .shoppingCartWrap_content_list_actionNumChangeButton{
 width: 20px;
 height: 20px;
-background-color: #eee;
+background-color: #fff;
 line-height: 20px;
 text-align: center;
 }
@@ -93,7 +94,7 @@ text-align: center;
 .shoppingCartWrap_footer{
 position: fixed;
 left: 0;
-bottom: 0;
+bottom: 2rem;
 width: 100%;
 height: 50px;
 box-shadow: 0px 1px 5px 5px #eee;

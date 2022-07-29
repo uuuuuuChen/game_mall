@@ -56,12 +56,5 @@ const goods = [
     }
 ]
 
-export const getAllGoodsRequest = () => {
-    const p = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(goods);
-        }, 1000);
-    })
-    return p
-}
+export const getAllGoodsRequest = () => axiosInstance.get('/cart')
 

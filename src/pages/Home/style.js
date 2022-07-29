@@ -25,14 +25,14 @@ overflow-x: hidden;
     }
     .number {
         display: inline-block;
-        width: 0.8rem;
-        height: 0.8rem;
+        width: 1rem;
+        height: 1rem;
         text-align: center;
         font-size: 0.6rem;
         background-color: red;
         color: white;
         border: 1px solid white;
-        border-radius: 0.4rem;
+        border-radius: 0.5rem;
         position: absolute;
         top: 0.2rem;
         right: 0.1rem;

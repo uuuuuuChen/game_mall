@@ -36,7 +36,7 @@ function App(props) {
     e.stopPropagation();
     let data = {
       status:status,
-      goodsId:goodsId
+      sid:goodsId
     }
     changeGoodsNumDispatch(data)
   }
@@ -46,7 +46,9 @@ function App(props) {
   }
   
   useEffect(() => {
-    getAllGoodsDispatch()
+    if(goodsList == '') {
+      getAllGoodsDispatch()
+    } 
   }, [])
 
   return (
@@ -59,8 +61,8 @@ function App(props) {
         goodsList.map((item, index) => (
           <div 
             className="shoppingCartWrap_content_list" 
-            key={item.goodsId}
-            onClick={checkGoods.bind(null,item.goodsId)}
+            key={item.sid}
+            onClick={checkGoods.bind(null,item.sid)}
             >
             <div className="shoppingCartWrap_content_check">
             {
@@ -68,29 +70,29 @@ function App(props) {
             }
             </div>
             <div className="shoppingCartWrap_content_list_imgWrap">
-              <img src={item.goodsSrc} alt="" />
+              <img src={item.img} alt="" />
             </div>
             <div className="shoppingCartWrap_content_list_info">
               <div className="shoppingCartWrap_content_list_title">
-                {item.goodsTitle}
+                {item.title}
               </div>
               <div className="shoppingCartWrap_content_list_subtitle">
-                {item.goodsSubtitle}
+                {item.desc}
               </div>
               <div className="shoppingCartWrap_content_list_action">
               {/* html + 数据绑定 = 静态的JSX  */}
               {
-                item.goodsNum > 0 && <div style={{display:'flex',
+                item.nums > 0 && <div style={{display:'flex',
                 justifyContent:'center',alignItems:'center'}}>
-                  <div className="shoppingCartWrap_content_list_price" >￥{item.goodsPrice}</div>
+                  <div className="shoppingCartWrap_content_list_price" >￥{item.price}</div>
                   <div className="shoppingCartWarp_content_list_actionNumChangeButton" 
-                  onClick={(e) => changeGoodNum(e, 'reduce', item.goodsId)}>
+                  onClick={(e) => changeGoodNum(e, 'reduce', item.sid)}>
                     -
                   </div>
                   <div className="shoppingCartWrap_content_list_actionNumInfo">
-                    {item.goodsNum}</div>
+                    {item.nums}</div>
                   <div className="shoppingCartWarp_content_list_actionNumChangeButton" 
-                  onClick={(e) => changeGoodNum(e, 'add', item.goodsId)}>+</div>
+                  onClick={(e) => changeGoodNum(e, 'add', item.sid)}>+</div>
                   
                 </div>
                   
@@ -123,8 +125,8 @@ function App(props) {
 
 const mapStateToProps = (state) => {
   let price = state.cart.list.reduce((total, item) => 
-  total + (item.check? parseFloat(item.goodsPrice)*item.goodsNum:0), 0)
-  console.log(price)
+  total + (item.check ? parseFloat(item.price)*item.nums : 0), 0)
+  // console.log(price)
   return {
     goodsList: state.cart.list,
     // 全选？ 状态？ redux 管理 
@@ -148,7 +150,8 @@ const mapDispatchToProps = (dispatch) => {
     },
     getAllGoodsDispatch() {
       dispatch(getAllGoodsAction())
-    }
+    },
+    // getSaleInfoDispatch
   }
 }
 

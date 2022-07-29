@@ -1,17 +1,15 @@
 import React, {useEffect,useState} from 'react'
 import { Wrapper } from './style'
-// import { getLolSaleRequest } from '@/api/request'
+import { Toast } from 'antd-mobile'
 import { Link } from 'react-router-dom'
 
-export default function Activities({lolsaleinfo}) {
-    // const [lolsale,setLolsale] = useState([])
-    // useEffect(()=> {
-    //     (async() => {
-    //         let { data } = await getLolSaleRequest()
-    //         // console.log(data)
-    //         setLolsale(data)
-    //     })()
-    // }, [])
+export default function Activities({lolsaleinfo,addCart}) {
+    const [activekey, setActivekey] = useState('')
+    // const addCart = (e, status, goodsId) => {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     // changeGoodsNumDispatch(data)
+    // }
     return (
         <Wrapper>
             <div className='title'>
@@ -27,13 +25,34 @@ export default function Activities({lolsaleinfo}) {
                             <Link 
                                 to='/lol'
                                 // key={Math.random()*1000}
-                                key={Math.random()*1000 + item.aid}
+                                key={Math.random()*1000 + item.sid}
                                 // className={`activities${item.aid}`}
-                                className={item.aid}
+                                className={item.sid}
                             >
                                 <img src={item.img} alt="" />
-                                <span>{item.desc}</span>
-                                <span style={{display:"block",color:'red'}}>￥{item.price}</span>
+                                <span className='span1'
+                                style={{display:"block"}}>{item.desc}</span>
+                                <span className='span2'
+                                style={{color:'red'}}>￥{item.price}</span>
+
+                                <i className="fa fa-shopping-cart icon-cart"
+                                onClick={(e) => {
+                                    addCart(e,item.sid)
+                                    if (activekey == `active${item.sid}`) {
+                                        Toast.show({
+                                            content: '该商品已经在购物车中了',
+                                        })
+                                    } else {
+                                        Toast.show({
+                                            content: '已成功加入购物车',
+
+                                        })
+                                        setActivekey(`active${item.sid}`)
+                                    }
+                                }
+                                }
+                            >
+                            </i>
                             </Link>
                         )
                     })

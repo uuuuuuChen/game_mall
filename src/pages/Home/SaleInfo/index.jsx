@@ -4,24 +4,23 @@ import { Toast } from 'antd-mobile'
 import { Link } from 'react-router-dom'
 import Swiper from 'swiper'
 
-function SaleInfo({ saleinfo }) {
-    const [activekey, setActivekey] = useState(false)
+function SaleInfo({ saleinfo, addCart }) {
+    const [activekey, setActivekey] = useState('')
     let swiper = null;
     useEffect(() => {
         if (swiper) return
         swiper = new Swiper('.sale', {
-            // observer: true, //修改swiper自己或子元素时，自动初始化swiper，默认为false
-            // observeParents: true, //修改swiper的父元素时，自动初始化swiper
+            observer: true, //修改swiper自己或子元素时，自动初始化swiper，默认为false
+            observeParents: true, //修改swiper的父元素时，自动初始化swiper
             freeMode: true,
-            enabled: true
         })
     }, [])
 
-    const addCart = (e, status, goodsId) => {
-        e.preventDefault();
-        e.stopPropagation();
-        // changeGoodsNumDispatch(data)
-    }
+    // const addCart = (e, status, goodsId) => {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     // changeGoodsNumDispatch(data)
+    // }
 
     const renderSaleIndfo = () => {
         return (
@@ -45,7 +44,7 @@ function SaleInfo({ saleinfo }) {
 
                             <i className="fa fa-shopping-cart icon-cart"
                                 onClick={(e) => {
-                                    addCart(e)
+                                    addCart(e,item.sid)
                                     if (activekey == `active${item.sid}`) {
                                         Toast.show({
                                             content: '该商品已经在购物车中了',

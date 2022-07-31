@@ -47,7 +47,9 @@ function Home(props) {
         getActivityListDataDispatch()
         getGameInfoDataDispatch()
         getSaleInfoDataDispatch()
-        getAllGoodsDispatch()
+        if (goodsList == ''){
+            getAllGoodsDispatch()
+        }
     }, [])
     return (
         <Wrapper>

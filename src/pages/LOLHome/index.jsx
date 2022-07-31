@@ -44,7 +44,9 @@ function LOLHome(props) {
         getLolSaleInfoDispatch()
         getLolGiftDispatch()
         getLolInfoDispatch()
-        getAllGoodsDispatch()
+        if (goodsList == ''){
+            getAllGoodsDispatch()
+        }
     }, [])
     return (
         <Wrapper>
